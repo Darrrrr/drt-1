@@ -74,6 +74,12 @@ static FMDatabase *dataBase = nil;
             NSString *sql1 = @"create table user(id integer primary key,username text,password text)";
             NSString *sql1_1 = @"insert into user(id,username,password) values (\"1\",\"admin\",\"123456\")";
             NSString *sql2 = @"create table predo(id integer primary key autoincrement,user_id integer,predocontent text,predodate text)";
+            NSString *sql2_1 = @"insert into predo(id,user_id,predocontent,predodate) values (\"1\",\"1\",\"上厕所\",\"2014.2.22\")";
+            NSString *sql2_2 = @"insert into predo(id,user_id,predocontent,predodate) values (\"2\",\"1\",\"上小厕所\",\"2014.2.23\")";
+            NSString *sql2_3 = @"insert into predo(id,user_id,predocontent,predodate) values (\"3\",\"1\",\"上大厕所\",\"2014.2.24\")";
+            NSString *sql2_4 = @"insert into predo(id,user_id,predocontent,predodate) values (\"4\",\"1\",\"吃饭\",\"2014.2.22\")";
+            NSString *sql2_5 = @"insert into predo(id,user_id,predocontent,predodate) values (\"5\",\"1\",\"编代码\",\"2014.2.25\")";
+            NSString *sql2_6 = @"insert into predo(id,user_id,predocontent,predodate) values (\"6\",\"1\",\"睡觉\",\"2014.2.22\")";
             //NSLog(@"[DBManager isTableExist]%hhd",![DBManager isTableExist:@"manager"]);
             if (![DBManager isTableExist:@"user"]) {
                 NSLog(@"no manager table");
@@ -104,6 +110,13 @@ static FMDatabase *dataBase = nil;
             if (![DBManager isTableExist:@"predo"]) {
                 NSLog(@"no predo table");
                 [dataBase executeUpdate:sql2];
+                [dataBase executeUpdate:sql2_1];
+                [dataBase executeUpdate:sql2_2];
+                [dataBase executeUpdate:sql2_3];
+                [dataBase executeUpdate:sql2_4];
+                [dataBase executeUpdate:sql2_5];
+                [dataBase executeUpdate:sql2_6];
+                NSLog(@"插入六条数据");
             }
             if (![DBManager isTableExist:@"user"] && ![DBManager isTableExist:@"predo"]) {
                 NSLog(@"创建表失败");
