@@ -5,7 +5,6 @@
 //  Created by 东华创元 on 14-4-21.
 //  Copyright (c) 2014年 东华创元. All rights reserved.
 //
-
 #import "OfficeViewController.h"
 
 @interface OfficeViewController ()
@@ -16,7 +15,7 @@
 @synthesize username,password,logo;
 - (void)viewDidLoad
 {
-   
+    
     [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut]; //InOut 表示进入和出去时都启动动画
     [UIView setAnimationDuration:0.5f];//动画时
@@ -25,8 +24,28 @@
     [UIView commitAnimations];
     [super viewDidLoad];
     
+    //读取本地用户信息
+    NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
+    username.text = [local objectForKey:@"UserName"];
+    password.text = [local objectForKey:@"Password"];
+    
+    
     
 }
+
+
+
+//保存用户信息
+- (void)saveUserNameAndPwd:(NSString *)userName andPwd:(NSString *)pwd
+{
+    NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
+    [settings removeObjectForKey:@"UserName"];
+    [settings removeObjectForKey:@"Password"];
+    [settings setObject:userName forKey:@"UserName"];
+    [settings setObject:pwd forKey:@"Password"];
+    [settings synchronize];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -36,13 +55,19 @@
 
 - (IBAction)doLogin:(id)sender
 {
-
+    
     _username = username.text;
     _password = password.text;
-
+    
     UserManager *usermanager = [[UserManager alloc] init];
     if ([usermanager checkUsername:_username andcheckPassword:_password]) {
         NSLog(@"登陆成功");
+        
+        //保存用户名和密码
+        [self saveUserNameAndPwd:_username andPwd:_password];
+        
+        
+        
         [self performSegueWithIdentifier:@"loginSegue" sender:sender];
     }
     else
@@ -57,7 +82,7 @@
         ad.alertViewStyle = UIAlertViewStyleDefault;
         [ad show];
     }
-
+    
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation{
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
