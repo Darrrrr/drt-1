@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>EE40A490-05E6-4BD6-A76F-4FB3A154455C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Office</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>07532BF1-E6BC-4BBD-80B4-42020840258B</key>
+		<string>https://github.com/ccgus/fmdb/trunk</string>
+		<key>1435D132-8727-48BE-BD40-E5228B94CD10</key>
+		<string>https://github.com/sunchenhui/Office.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Office.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>07532BF1-E6BC-4BBD-80B4-42020840258B</key>
+		<string>../../../fmdb (trunk)</string>
+		<key>1435D132-8727-48BE-BD40-E5228B94CD10</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>07532BF1-E6BC-4BBD-80B4-42020840258B</key>
+		<string>https://github.com/ccgus/fmdb</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sunchenhui/Office.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1435D132-8727-48BE-BD40-E5228B94CD10</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
+			<string>branches</string>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlRepositoryTagsRelativeLocationKey</key>
+			<string>tags</string>
+			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
+			<string>trunk</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>07532BF1-E6BC-4BBD-80B4-42020840258B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>fmdb (trunk)</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1435D132-8727-48BE-BD40-E5228B94CD10</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Office666</string>
+		</dict>
+	</array>
+</dict>
+</plist>
