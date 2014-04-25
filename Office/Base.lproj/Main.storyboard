@@ -89,7 +89,6 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="代办事项(0)" id="mWY-na-jBk">
-                                        <barButtonItem key="leftBarButtonItem" title="切换用户" id="0VJ-mc-Q2F"/>
                                         <barButtonItem key="rightBarButtonItem" title="刷新" id="B78-kX-at2"/>
                                     </navigationItem>
                                 </items>
