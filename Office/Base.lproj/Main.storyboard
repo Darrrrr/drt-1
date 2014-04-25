@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="-379" y="-558"/>
         </scene>
-        <!--View Controller - Title-->
+        <!--Predo View Controller - Title-->
         <scene sceneID="2Vj-fw-UZB">
             <objects>
-                <viewController id="qXQ-yp-gxl" sceneMemberID="viewController">
+                <viewController id="qXQ-yp-gxl" customClass="PredoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hcP-OR-XWD"/>
                         <viewControllerLayoutGuide type="bottom" id="Qcw-wl-JMD"/>
@@ -95,25 +95,18 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5uP-uE-0Jf">
-                                <rect key="frame" x="0.0" y="70" width="320" height="447"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="452"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dX2-UA-b13">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dX2-UA-b13" id="Mrh-LB-4eX">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="待办事项" image="dbsx.png" id="8ne-Zj-4sb"/>
                     <navigationItem key="navigationItem" title="Title" id="xvH-22-Zqc"/>
+                    <connections>
+                        <outlet property="table" destination="5uP-uE-0Jf" id="TF3-Jl-RQj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uin-eN-n3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

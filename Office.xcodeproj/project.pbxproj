@@ -27,6 +27,8 @@
 		242DFA9A1904F4B30067B111 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242DFA7C1904F4B30067B111 /* UIKit.framework */; };
 		24D721A8190A00CF00A229AA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721A7190A00CF00A229AA /* DBManager.m */; };
 		24D721AB190A010F00A229AA /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721AA190A010F00A229AA /* UserManager.m */; };
+		24D721AE190A0D2200A229AA /* PredoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721AD190A0D2200A229AA /* PredoViewController.m */; };
+		24D721B1190A20E600A229AA /* Predo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721B0190A20E600A229AA /* Predo.m */; };
 		B8644B3E1907871C00238B15 /* xx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B381907871C00238B15 /* xx@2x.png */; };
 		B8644B3F1907871C00238B15 /* bwl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B391907871C00238B15 /* bwl@2x.png */; };
 		B8644B401907871C00238B15 /* lxr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B3A1907871C00238B15 /* lxr@2x.png */; };
@@ -82,6 +84,10 @@
 		24D721A7190A00CF00A229AA /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
 		24D721A9190A010F00A229AA /* UserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		24D721AA190A010F00A229AA /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		24D721AC190A0D2200A229AA /* PredoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredoViewController.h; sourceTree = "<group>"; };
+		24D721AD190A0D2200A229AA /* PredoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredoViewController.m; sourceTree = "<group>"; };
+		24D721AF190A20E600A229AA /* Predo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Predo.h; sourceTree = "<group>"; };
+		24D721B0190A20E600A229AA /* Predo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Predo.m; sourceTree = "<group>"; };
 		B8644B381907871C00238B15 /* xx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xx@2x.png"; sourceTree = "<group>"; };
 		B8644B391907871C00238B15 /* bwl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bwl@2x.png"; sourceTree = "<group>"; };
 		B8644B3A1907871C00238B15 /* lxr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lxr@2x.png"; sourceTree = "<group>"; };
@@ -140,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				242DFA7E1904F4B30067B111 /* Office */,
-				242DFA771904F4B30067B111 /* Frameworks */,
 				242DFA761904F4B30067B111 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				242DFA971904F4B30067B111 /* XCTest.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		242DFA7E1904F4B30067B111 /* Office */ = {
@@ -176,6 +182,9 @@
 				242DFA8A1904F4B30067B111 /* Main.storyboard */,
 				242DFA8D1904F4B30067B111 /* OfficeViewController.h */,
 				242DFA8E1904F4B30067B111 /* OfficeViewController.m */,
+				24D721AC190A0D2200A229AA /* PredoViewController.h */,
+				24D721AD190A0D2200A229AA /* PredoViewController.m */,
+				242DFA771904F4B30067B111 /* Frameworks */,
 				242DFA901904F4B30067B111 /* Images.xcassets */,
 				B8B1A4701909E85000697710 /* UI */,
 				242DFA7F1904F4B30067B111 /* Supporting Files */,
@@ -202,6 +211,8 @@
 				24D721A5190A00CF00A229AA /* Config.h */,
 				24D721A6190A00CF00A229AA /* DBManager.h */,
 				24D721A7190A00CF00A229AA /* DBManager.m */,
+				24D721AF190A20E600A229AA /* Predo.h */,
+				24D721B0190A20E600A229AA /* Predo.m */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -328,6 +339,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24D721B1190A20E600A229AA /* Predo.m in Sources */,
+				24D721AE190A0D2200A229AA /* PredoViewController.m in Sources */,
 				242DFA891904F4B30067B111 /* OfficeAppDelegate.m in Sources */,
 				242DFA851904F4B30067B111 /* main.m in Sources */,
 				24D721AB190A010F00A229AA /* UserManager.m in Sources */,
