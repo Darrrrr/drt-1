@@ -99,7 +99,7 @@
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" label=""/>
                                 <connections>
-                                    <segue destination="Uq2-Sg-pDP" kind="push" id="3Sb-3c-xEQ"/>
+                                    <segue destination="Uq2-Sg-pDP" kind="push" identifier="showDetail" id="3Sb-3c-xEQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -205,10 +205,16 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKZ-h2-anc">
-                                <rect key="frame" x="139" y="253" width="42" height="21"/>
+                                <rect key="frame" x="20" y="81" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3D-Y1-uqf">
+                                <rect key="frame" x="20" y="110" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -217,11 +223,12 @@
                     <navigationItem key="navigationItem" id="sjB-Xq-oZ9"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="wKZ-h2-anc" id="i8a-q1-CGY"/>
+                        <outlet property="detailTime" destination="H3D-Y1-uqf" id="cej-GO-kkl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WtD-6h-mxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-274" y="91"/>
+            <point key="canvasLocation" x="-231" y="91"/>
         </scene>
         <!--View Controller - 消息-->
         <scene sceneID="3UQ-2a-Bom">
@@ -259,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VPb-v3-WvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="94"/>
+            <point key="canvasLocation" x="-153" y="133"/>
         </scene>
         <!--View Controller - 备忘录-->
         <scene sceneID="SIt-LV-eHa">
