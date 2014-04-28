@@ -9,7 +9,7 @@
 #import "Predo.h"
 
 @implementation Predo
-+ (NSArray *)findAllPredo
++ (NSMutableArray *)findAllPredo
 {
     __block NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:0];
     FMDatabaseQueue *queue = [DBManager queue];
@@ -27,7 +27,7 @@
         }
     }];
     //NSLog(@"Predo.h____mutableArray___%@",mutableArray);
-    NSArray *resultArray = [mutableArray copy];
+   NSMutableArray *resultArray = [mutableArray copy];
     //NSLog(@"Predo.h____resultArray___%@",resultArray);
     return resultArray;
 }

@@ -11,6 +11,6 @@
 
 @interface Predo : NSObject
 
-+ (NSArray *)findAllPredo;
++ (NSMutableArray *)findAllPredo;
 
 @end
