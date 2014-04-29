@@ -13,4 +13,5 @@
 
 + (NSMutableArray *)findAllPredo;
 
+//+ (NSComparisonResult)compare:(NSDictionary *)otherDictionary;
 @end

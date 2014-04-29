@@ -61,6 +61,7 @@
     
     UserManager *usermanager = [[UserManager alloc] init];
     int user_id = [usermanager checkUsername:_username andcheckPassword:_password];
+    NSLog(@"user_id================>%d",user_id);
     if (user_id) {
         NSLog(@"登陆成功");
         

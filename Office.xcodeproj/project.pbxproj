@@ -25,6 +25,9 @@
 		242DFA981904F4B30067B111 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242DFA971904F4B30067B111 /* XCTest.framework */; };
 		242DFA991904F4B30067B111 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242DFA781904F4B30067B111 /* Foundation.framework */; };
 		242DFA9A1904F4B30067B111 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242DFA7C1904F4B30067B111 /* UIKit.framework */; };
+		243F2E5B190F4A5A006AC293 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F2E5A190F4A5A006AC293 /* MessageViewController.m */; };
+		243F2E5E190F4AE8006AC293 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F2E5D190F4AE8006AC293 /* Message.m */; };
+		243F2E61190F57E7006AC293 /* MsgDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F2E60190F57E7006AC293 /* MsgDetailViewController.m */; };
 		24D721A8190A00CF00A229AA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721A7190A00CF00A229AA /* DBManager.m */; };
 		24D721AB190A010F00A229AA /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721AA190A010F00A229AA /* UserManager.m */; };
 		24D721B1190A20E600A229AA /* Predo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721B0190A20E600A229AA /* Predo.m */; };
@@ -81,6 +84,12 @@
 		242DFA901904F4B30067B111 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		242DFA961904F4B30067B111 /* OfficeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfficeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		242DFA971904F4B30067B111 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		243F2E59190F4A5A006AC293 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		243F2E5A190F4A5A006AC293 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		243F2E5C190F4AE8006AC293 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		243F2E5D190F4AE8006AC293 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		243F2E5F190F57E7006AC293 /* MsgDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgDetailViewController.h; sourceTree = "<group>"; };
+		243F2E60190F57E7006AC293 /* MsgDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgDetailViewController.m; sourceTree = "<group>"; };
 		24D721A5190A00CF00A229AA /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		24D721A6190A00CF00A229AA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		24D721A7190A00CF00A229AA /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -191,6 +200,10 @@
 				B8221A61190E422600E105F5 /* PretodoViewController.m */,
 				B8221A63190E46BD00E105F5 /* PreDetailViewController.h */,
 				B8221A64190E46BD00E105F5 /* PreDetailViewController.m */,
+				243F2E59190F4A5A006AC293 /* MessageViewController.h */,
+				243F2E5A190F4A5A006AC293 /* MessageViewController.m */,
+				243F2E5F190F57E7006AC293 /* MsgDetailViewController.h */,
+				243F2E60190F57E7006AC293 /* MsgDetailViewController.m */,
 				242DFA771904F4B30067B111 /* Frameworks */,
 				242DFA901904F4B30067B111 /* Images.xcassets */,
 				B8B1A4701909E85000697710 /* UI */,
@@ -220,6 +233,8 @@
 				24D721A7190A00CF00A229AA /* DBManager.m */,
 				24D721AF190A20E600A229AA /* Predo.h */,
 				24D721B0190A20E600A229AA /* Predo.m */,
+				243F2E5C190F4AE8006AC293 /* Message.h */,
+				243F2E5D190F4AE8006AC293 /* Message.m */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -354,11 +369,14 @@
 				24D721AB190A010F00A229AA /* UserManager.m in Sources */,
 				2409D7D61909F7020063BD61 /* FMDatabase.m in Sources */,
 				24D721A8190A00CF00A229AA /* DBManager.m in Sources */,
+				243F2E5B190F4A5A006AC293 /* MessageViewController.m in Sources */,
+				243F2E5E190F4AE8006AC293 /* Message.m in Sources */,
 				2409D7DA1909F7020063BD61 /* FMResultSet.m in Sources */,
 				242DFA8F1904F4B30067B111 /* OfficeViewController.m in Sources */,
 				B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */,
 				2409D7D81909F7020063BD61 /* FMDatabasePool.m in Sources */,
 				2409D7D71909F7020063BD61 /* FMDatabaseAdditions.m in Sources */,
+				243F2E61190F57E7006AC293 /* MsgDetailViewController.m in Sources */,
 				2409D7D91909F7020063BD61 /* FMDatabaseQueue.m in Sources */,
 				B8221A65190E46BD00E105F5 /* PreDetailViewController.m in Sources */,
 			);

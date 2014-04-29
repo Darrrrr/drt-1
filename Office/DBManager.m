@@ -82,6 +82,7 @@ static FMDatabase *dataBase = nil;
             NSString *sql2_5 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"5\",\"2\",\"学习iOS——项目作业\",\"2014.2.24\",\"学习了大量关于项目作业的问题学会了很多很多知识，如这个项目作业那个oc\",\"未完成\")";
             NSString *sql2_6 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"6\",\"1\",\"学习iOS——进程管理\",\"2014.2.24\",\"学习了大量关于进程管理的问题学会了很多很多知识，如这个进程管理那个进程管理\",\"完成\")";
             //NSLog(@"[DBManager isTableExist]%hhd",![DBManager isTableExist:@"manager"]);
+            NSString *sql3 = @"create table message(id integer primary key autoincrement,user_id integer,messagecontent text,messagefrom text,messagedate text,state text)";
             if (![DBManager isTableExist:@"user"]) {
                 NSLog(@"no manager table");
                 [dataBase executeUpdate:sql1];
@@ -112,7 +113,13 @@ static FMDatabase *dataBase = nil;
                 [dataBase executeUpdate:sql2_6];
                 NSLog(@"插入六条数据");
             }
-            if (![DBManager isTableExist:@"user"] && ![DBManager isTableExist:@"predo"]) {
+            
+            if (![DBManager isTableExist:@"message"]) {
+                NSLog(@"no predo table");
+                [dataBase executeUpdate:sql3];
+            }
+            
+            if (![DBManager isTableExist:@"user"] && ![DBManager isTableExist:@"predo"] && ![DBManager isTableExist:@"message"]) {
                 NSLog(@"创建表失败");
             }
             else
