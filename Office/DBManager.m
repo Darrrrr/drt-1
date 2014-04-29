@@ -83,6 +83,9 @@ static FMDatabase *dataBase = nil;
             NSString *sql2_6 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"6\",\"1\",\"学习iOS——进程管理\",\"2014.2.24\",\"学习了大量关于进程管理的问题学会了很多很多知识，如这个进程管理那个进程管理\",\"完成\")";
             //NSLog(@"[DBManager isTableExist]%hhd",![DBManager isTableExist:@"manager"]);
             NSString *sql3 = @"create table message(id integer primary key autoincrement,user_id integer,messagecontent text,messagefrom text,messagedate text,state text)";
+            NSString *sql3_1 = @"insert into message(id,user_id,messagecontent,messagefrom,messagedate,state) values (\"1\",\"1\",\"学习iOS——segue/n学习了大量关于页面跳转的问题学会了很多很多知识，如这个跳转那个跳转\",\"msgfrom:123\",\"2014.2.22\",\"未完成\")";
+            NSString *sql3_2 = @"insert into message(id,user_id,predocontent,predodate,predodetail,state) values (\"2\",\"2\",\"学习iOS——ARC/n学习了大量关于ARC的问题学会了很多很多知识，如这个ARC那个ARC\",\"msgfrom:456\",\"2014.2.23\",\"未完成\")";
+            NSString *sql3_3 = @"insert into message(id,user_id,predocontent,predodate,predodetail,state) values (\"3\",\"1\",\"学习iOS——oc学习/n学习了大量关于oc的问题学会了很多很多知识，如这个oc那个oc\",\"msgfrom:123\",\"2014.2.24\",\"未完成\")";
             if (![DBManager isTableExist:@"user"]) {
                 NSLog(@"no manager table");
                 [dataBase executeUpdate:sql1];
@@ -116,7 +119,15 @@ static FMDatabase *dataBase = nil;
             
             if (![DBManager isTableExist:@"message"]) {
                 NSLog(@"no predo table");
+            }
+            
+            if ([DBManager isTableExist:@"message"]) {
+                NSLog(@"no predo table");
                 [dataBase executeUpdate:sql3];
+                [dataBase executeUpdate:sql3_1];
+                [dataBase executeUpdate:sql3_2];
+                [dataBase executeUpdate:sql3_3];
+                NSLog(@"插入三条数据");
             }
             
             if (![DBManager isTableExist:@"user"] && ![DBManager isTableExist:@"predo"] && ![DBManager isTableExist:@"message"]) {

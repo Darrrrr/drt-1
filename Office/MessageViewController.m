@@ -8,6 +8,7 @@
 
 #import "MessageViewController.h"
 #import "Message.h"
+#import "MsgDetailViewController.h"
 #define messageFromTag 1
 #define messageDateTag 2
 #define messageContentTag 3
@@ -61,7 +62,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Cell1";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     NSDictionary *predoDic = [array objectAtIndex:[indexPath row]];
@@ -74,11 +75,20 @@
     [_messageFrom setText:[NSString stringWithFormat:@"截止时间：%@",[predoDic objectForKey:@"messagefrom"]]];
     [_messageDate setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"messagedate"]]];
     [_messageContent setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"messagecontent"]]];
-    [_messageState setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"state"]]];
+    [_messageState setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"messagestate"]]];
     
     return cell;
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"showMsg"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *predoDic = [array objectAtIndex:[indexPath row]];
+        [[segue destinationViewController] setDetailItem:predoDic];
+    }
+}
 
 
 @end
