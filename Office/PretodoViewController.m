@@ -7,7 +7,7 @@
 //
 
 #import "PretodoViewController.h"
-#import "DetailViewController.h"
+#import "PreDetailViewController.h"
 #import "Predo.h"
 #define preDateTag 1
 #define preDoTag 2
@@ -34,10 +34,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    
+    UIBarButtonItem *freshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(freshList:)];
+    self.navigationItem.rightBarButtonItem = freshButton;
     
     array = [Predo findAllPredo];
     NSLog(@"PredoViewController.h++++array++%@",array);
@@ -51,7 +51,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
+- (void)freshList:(id)sender
 {
    
     NSLog(@"fresh");
@@ -78,7 +78,7 @@
     
     UILabel *_preDate = (UILabel *)[cell.contentView viewWithTag:preDateTag];
     UILabel *_preDo = (UILabel *)[cell.contentView viewWithTag:preDoTag];
-    [_preDate setText:[NSString stringWithFormat:@"时间：%@",[predoDic objectForKey:@"predodate"]]];
+    [_preDate setText:[NSString stringWithFormat:@"截止时间：%@",[predoDic objectForKey:@"predodate"]]];
     [_preDo setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predocontent"]]];
     
     
@@ -87,21 +87,8 @@
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [array removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
+
 
 /*
  // Override to support rearranging the table view.

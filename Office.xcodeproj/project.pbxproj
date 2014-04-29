@@ -28,8 +28,9 @@
 		24D721A8190A00CF00A229AA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721A7190A00CF00A229AA /* DBManager.m */; };
 		24D721AB190A010F00A229AA /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721AA190A010F00A229AA /* UserManager.m */; };
 		24D721B1190A20E600A229AA /* Predo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721B0190A20E600A229AA /* Predo.m */; };
+		B808A925190F3774000554D2 /* predoList.png in Resources */ = {isa = PBXBuildFile; fileRef = B808A924190F3774000554D2 /* predoList.png */; };
 		B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A61190E422600E105F5 /* PretodoViewController.m */; };
-		B8221A65190E46BD00E105F5 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A64190E46BD00E105F5 /* DetailViewController.m */; };
+		B8221A65190E46BD00E105F5 /* PreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A64190E46BD00E105F5 /* PreDetailViewController.m */; };
 		B8644B3E1907871C00238B15 /* xx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B381907871C00238B15 /* xx@2x.png */; };
 		B8644B3F1907871C00238B15 /* bwl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B391907871C00238B15 /* bwl@2x.png */; };
 		B8644B401907871C00238B15 /* lxr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B3A1907871C00238B15 /* lxr@2x.png */; };
@@ -87,10 +88,11 @@
 		24D721AA190A010F00A229AA /* UserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
 		24D721AF190A20E600A229AA /* Predo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Predo.h; sourceTree = "<group>"; };
 		24D721B0190A20E600A229AA /* Predo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Predo.m; sourceTree = "<group>"; };
+		B808A924190F3774000554D2 /* predoList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = predoList.png; sourceTree = "<group>"; };
 		B8221A60190E422600E105F5 /* PretodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PretodoViewController.h; sourceTree = "<group>"; };
 		B8221A61190E422600E105F5 /* PretodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PretodoViewController.m; sourceTree = "<group>"; };
-		B8221A63190E46BD00E105F5 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		B8221A64190E46BD00E105F5 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B8221A63190E46BD00E105F5 /* PreDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreDetailViewController.h; sourceTree = "<group>"; };
+		B8221A64190E46BD00E105F5 /* PreDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreDetailViewController.m; sourceTree = "<group>"; };
 		B8644B381907871C00238B15 /* xx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xx@2x.png"; sourceTree = "<group>"; };
 		B8644B391907871C00238B15 /* bwl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bwl@2x.png"; sourceTree = "<group>"; };
 		B8644B3A1907871C00238B15 /* lxr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lxr@2x.png"; sourceTree = "<group>"; };
@@ -187,8 +189,8 @@
 				242DFA8E1904F4B30067B111 /* OfficeViewController.m */,
 				B8221A60190E422600E105F5 /* PretodoViewController.h */,
 				B8221A61190E422600E105F5 /* PretodoViewController.m */,
-				B8221A63190E46BD00E105F5 /* DetailViewController.h */,
-				B8221A64190E46BD00E105F5 /* DetailViewController.m */,
+				B8221A63190E46BD00E105F5 /* PreDetailViewController.h */,
+				B8221A64190E46BD00E105F5 /* PreDetailViewController.m */,
 				242DFA771904F4B30067B111 /* Frameworks */,
 				242DFA901904F4B30067B111 /* Images.xcassets */,
 				B8B1A4701909E85000697710 /* UI */,
@@ -225,6 +227,7 @@
 		B8B1A4701909E85000697710 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				B808A924190F3774000554D2 /* predoList.png */,
 				B8644B481907A50C00238B15 /* bgico.png */,
 				B8644B44190788E400238B15 /* dbsx@2x.png */,
 				B8644B45190788E400238B15 /* dbsx.png */,
@@ -315,6 +318,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B808A925190F3774000554D2 /* predoList.png in Resources */,
 				B8644B491907A50C00238B15 /* bgico.png in Resources */,
 				B8644B411907871C00238B15 /* lxr.png in Resources */,
 				B8644B431907871C00238B15 /* xx.png in Resources */,
@@ -356,7 +360,7 @@
 				2409D7D81909F7020063BD61 /* FMDatabasePool.m in Sources */,
 				2409D7D71909F7020063BD61 /* FMDatabaseAdditions.m in Sources */,
 				2409D7D91909F7020063BD61 /* FMDatabaseQueue.m in Sources */,
-				B8221A65190E46BD00E105F5 /* DetailViewController.m in Sources */,
+				B8221A65190E46BD00E105F5 /* PreDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
