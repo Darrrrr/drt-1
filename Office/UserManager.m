@@ -10,20 +10,20 @@
 
 @implementation UserManager
 
-- (BOOL)checkUsername:(NSString *)username andcheckPassword:(NSString *)password
+- (int)checkUsername:(NSString *)username andcheckPassword:(NSString *)password
 {
     FMDatabase *dataBase = [DBManager createDataBase];
-    BOOL isFind = NO;
+    int isFind = 0;
     if ([dataBase open]) {
         NSLog(@"---------%@,%@",username,password);
         NSString *sql = [NSString stringWithFormat:@"select * from user where username=\"%@\" and password=\"%@\"",username,password];
         NSLog(@"---------%@",sql);
         FMResultSet *rs = [dataBase executeQuery:sql];
         NSLog(@"%@",rs);
-
+        
         if ([rs next]) {
             
-            isFind = YES;
+            isFind = [rs intForColumn:@"id"];
         }
         [dataBase close];
     }

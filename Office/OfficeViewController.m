@@ -60,7 +60,8 @@
     _password = password.text;
     
     UserManager *usermanager = [[UserManager alloc] init];
-    if ([usermanager checkUsername:_username andcheckPassword:_password]) {
+    int user_id = [usermanager checkUsername:_username andcheckPassword:_password];
+    if (user_id) {
         NSLog(@"登陆成功");
         
         //保存用户名和密码

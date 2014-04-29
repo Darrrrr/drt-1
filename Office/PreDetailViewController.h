@@ -12,9 +12,12 @@
 
 
 
+
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailTime;
+
+@property (weak, nonatomic) IBOutlet UILabel *detailpredo;
 
 @end

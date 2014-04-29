@@ -11,6 +11,6 @@
 @interface UserManager : NSObject
 
 @property (nonatomic, copy) NSString *userID;//用户的ID
-- (BOOL)checkUsername:(NSString *)username andcheckPassword:(NSString *)password;
+- (int)checkUsername:(NSString *)username andcheckPassword:(NSString *)password;
 
 @end

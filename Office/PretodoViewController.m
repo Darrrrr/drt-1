@@ -11,6 +11,7 @@
 #import "Predo.h"
 #define preDateTag 1
 #define preDoTag 2
+#define preDoStateTag 3
 
 @interface PretodoViewController (){
 
@@ -78,8 +79,10 @@
     
     UILabel *_preDate = (UILabel *)[cell.contentView viewWithTag:preDateTag];
     UILabel *_preDo = (UILabel *)[cell.contentView viewWithTag:preDoTag];
+    UILabel *_prestate = (UILabel *)[cell.contentView viewWithTag:preDoStateTag];
     [_preDate setText:[NSString stringWithFormat:@"截止时间：%@",[predoDic objectForKey:@"predodate"]]];
     [_preDo setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predocontent"]]];
+    [_prestate setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predostate"]]];
     
     
     

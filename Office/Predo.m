@@ -19,8 +19,8 @@
             FMResultSet *rs = [db executeQuery:@"select * from predo"];
             while ([rs next])
             {
-                //create table predo(id integer primary key autoincrement,user_id integer,predocontent text,predodate text)
-                NSDictionary *dic = @{@"predocontent": [rs stringForColumn:@"predocontent"],@"predodate":[rs stringForColumn:@"predodate"]};
+                //create table predo(id integer primary key autoincrement,user_id integer,predocontent text,predodate text,predodetail text,state boolen
+                NSDictionary *dic = @{@"predocontent": [rs stringForColumn:@"predocontent"],@"predodate":[rs stringForColumn:@"predodate"],@"predodetail": [rs stringForColumn:@"predodetail"],@"predostate": [rs stringForColumn:@"state"]};
                 [mutableArray addObject:dic];
                                       
             }

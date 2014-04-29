@@ -33,6 +33,7 @@
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predocontent"]];
         self.detailTime.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predodate"]];
+        self.detailpredo.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predodetail"]];
     }
 }
 

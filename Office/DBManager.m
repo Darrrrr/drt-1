@@ -73,36 +73,30 @@ static FMDatabase *dataBase = nil;
             // autoincrement不能用
             NSString *sql1 = @"create table user(id integer primary key,username text,password text)";
             NSString *sql1_1 = @"insert into user(id,username,password) values (\"1\",\"admin\",\"123456\")";
-            NSString *sql2 = @"create table predo(id integer primary key autoincrement,user_id integer,predocontent text,predodate text)";
-            NSString *sql2_1 = @"insert into predo(id,user_id,predocontent,predodate) values (\"1\",\"1\",\"上厕所\",\"2014.2.22\")";
-            NSString *sql2_2 = @"insert into predo(id,user_id,predocontent,predodate) values (\"2\",\"1\",\"上小厕所\",\"2014.2.23\")";
-            NSString *sql2_3 = @"insert into predo(id,user_id,predocontent,predodate) values (\"3\",\"1\",\"上大厕所\",\"2014.2.24\")";
-            NSString *sql2_4 = @"insert into predo(id,user_id,predocontent,predodate) values (\"4\",\"1\",\"吃饭\",\"2014.2.22\")";
-            NSString *sql2_5 = @"insert into predo(id,user_id,predocontent,predodate) values (\"5\",\"1\",\"编代码\",\"2014.2.25\")";
-            NSString *sql2_6 = @"insert into predo(id,user_id,predocontent,predodate) values (\"6\",\"1\",\"睡觉\",\"2014.2.22\")";
+            NSString *sql1_2 = @"insert into user(id,username,password) values (\"2\",\"dhcc\",\"123456\")";
+            NSString *sql2 = @"create table predo(id integer primary key autoincrement,user_id integer,predocontent text,predodate text,predodetail text,state text)";
+            NSString *sql2_1 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"1\",\"1\",\"学习iOS——segue\",\"2014.2.22\",\"学习了大量关于页面跳转的问题学会了很多很多知识，如这个跳转那个跳转\",\"未完成\")";
+            NSString *sql2_2 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"2\",\"1\",\"学习iOS——ARC\",\"2014.2.23\",\"学习了大量关于ARC的问题学会了很多很多知识，如这个ARC那个ARC\",\"未完成\")";
+            NSString *sql2_3 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"3\",\"1\",\"学习iOS——oc学习\",\"2014.2.24\",\"学习了大量关于oc的问题学会了很多很多知识，如这个oc那个oc\",\"未完成\")";
+            NSString *sql2_4 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"4\",\"2\",\"学习iOS——传递\",\"2014.2.24\",\"学习了大量关于传递的问题学会了很多很多知识，如这个传递那个传递\",\"完成\")";
+            NSString *sql2_5 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"5\",\"2\",\"学习iOS——项目作业\",\"2014.2.24\",\"学习了大量关于项目作业的问题学会了很多很多知识，如这个项目作业那个oc\",\"未完成\")";
+            NSString *sql2_6 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"6\",\"1\",\"学习iOS——进程管理\",\"2014.2.24\",\"学习了大量关于进程管理的问题学会了很多很多知识，如这个进程管理那个进程管理\",\"完成\")";
             //NSLog(@"[DBManager isTableExist]%hhd",![DBManager isTableExist:@"manager"]);
             if (![DBManager isTableExist:@"user"]) {
                 NSLog(@"no manager table");
                 [dataBase executeUpdate:sql1];
                 NSLog(@"+++++++++++++%d",[dataBase executeUpdate:sql1]);
                 NSLog(@"[DBManager isTableExist]%hhd",[DBManager isTableExist:@"manager"]);
-                if ([dataBase executeQuery:sql1_1]) {
-                    NSLog(@"插入成功");
-                }
-                else
-                {
-                    NSLog(@"插入成功");
-                }
     
             }
             
             if ([DBManager isTableExist:@"user"]) {
-                if ([dataBase executeUpdate:sql1_1]) {
+                if ([dataBase executeUpdate:sql1_1] && [dataBase executeUpdate:sql1_2]) {
                     NSLog(@"插入成功");
                 }
                 else
                 {
-                    NSLog(@"插入成功");
+                    NSLog(@"插入失败");
                 }
                 
             }
