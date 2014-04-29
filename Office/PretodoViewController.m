@@ -13,11 +13,7 @@
 #define preDoTag 2
 #define preDoStateTag 3
 
-@interface PretodoViewController (){
-
- 
-    
-}
+@interface PretodoViewController ()
 
 @end
 
@@ -90,6 +86,27 @@
     return cell;
 }
 
+
+/*自定义返回
+- (void)back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        // 下一个界面的返回按钮
+        UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+        temporaryBarButtonItem.title = @"返回";
+        temporaryBarButtonItem.target = self;
+        temporaryBarButtonItem.action = @selector(back:);
+        self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+    }
+    NSLog(@"22222222233333333--------------------------------");
+    return self;
+}
+
+*/
 
 
 

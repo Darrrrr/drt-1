@@ -14,8 +14,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *detailmsgfrom;
 @property (weak, nonatomic) IBOutlet UILabel *detailTime;
+@property (weak, nonatomic) IBOutlet UITextView *detailmsgcount;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailmsg;
 
 
 @end

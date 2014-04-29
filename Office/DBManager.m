@@ -121,7 +121,7 @@ static FMDatabase *dataBase = nil;
                 NSLog(@"no predo table");
             }
             
-            if ([DBManager isTableExist:@"message"]) {
+            if (![DBManager isTableExist:@"message"]) {
                 NSLog(@"no predo table");
                 [dataBase executeUpdate:sql3];
                 [dataBase executeUpdate:sql3_1];

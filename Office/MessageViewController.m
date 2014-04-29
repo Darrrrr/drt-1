@@ -23,13 +23,9 @@
 @synthesize array;
 
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (void)awakeFromNib
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [super awakeFromNib];
 }
 
 - (void)viewDidLoad
@@ -65,17 +61,17 @@
     static NSString *CellIdentifier = @"Cell1";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    NSDictionary *predoDic = [array objectAtIndex:[indexPath row]];
+    NSDictionary *msgDic = [array objectAtIndex:[indexPath row]];
     
     UILabel *_messageFrom = (UILabel *)[cell.contentView viewWithTag:messageFromTag];
     UILabel *_messageDate = (UILabel *)[cell.contentView viewWithTag:messageDateTag];
     UILabel *_messageContent = (UILabel *)[cell.contentView viewWithTag:messageContentTag];
-    UILabel *_messageState = (UILabel *)[cell.contentView viewWithTag:messageStateTag];
-    //NSDictionary *dic = @{@"messagecontent": [rs stringForColumn:@"messagecontent"],@"messagedate":[rs stringForColumn:@"messagedate"],@"messagefrom": [rs stringForColumn:@"messagefrom"],@"messagestate": [rs stringForColumn:@"state"]};
-    [_messageFrom setText:[NSString stringWithFormat:@"截止时间：%@",[predoDic objectForKey:@"messagefrom"]]];
-    [_messageDate setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"messagedate"]]];
-    [_messageContent setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"messagecontent"]]];
-    [_messageState setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"messagestate"]]];
+   // UILabel *_messageState = (UILabel *)[cell.contentView viewWithTag:messageStateTag];
+   
+    [_messageFrom setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagefrom"]]];
+    [_messageDate setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagedate"]]];
+    [_messageContent setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagecontent"]]];
+    //[_messageState setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"messagestate"]]];
     
     return cell;
 }
@@ -85,8 +81,8 @@
 {
     if ([[segue identifier] isEqualToString:@"showMsg"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDictionary *predoDic = [array objectAtIndex:[indexPath row]];
-        [[segue destinationViewController] setDetailItem:predoDic];
+        NSDictionary *msgDic = [array objectAtIndex:[indexPath row]];
+        [[segue destinationViewController] setDetailItem:msgDic];
     }
 }
 

@@ -43,6 +43,8 @@
 		B8644B46190788E400238B15 /* dbsx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B44190788E400238B15 /* dbsx@2x.png */; };
 		B8644B47190788E400238B15 /* dbsx.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B45190788E400238B15 /* dbsx.png */; };
 		B8644B491907A50C00238B15 /* bgico.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B481907A50C00238B15 /* bgico.png */; };
+		B8A03BDA190FA7E5004FBB3A /* lxrtx.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A03BD9190FA7E5004FBB3A /* lxrtx.png */; };
+		B8A03BDC190FA87D004FBB3A /* fgx.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A03BDB190FA87D004FBB3A /* fgx.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		B8644B44190788E400238B15 /* dbsx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dbsx@2x.png"; sourceTree = "<group>"; };
 		B8644B45190788E400238B15 /* dbsx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dbsx.png; sourceTree = "<group>"; };
 		B8644B481907A50C00238B15 /* bgico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgico.png; sourceTree = "<group>"; };
+		B8A03BD9190FA7E5004FBB3A /* lxrtx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lxrtx.png; sourceTree = "<group>"; };
+		B8A03BDB190FA87D004FBB3A /* fgx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgx.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				B808A924190F3774000554D2 /* predoList.png */,
+				B8A03BDB190FA87D004FBB3A /* fgx.png */,
+				B8A03BD9190FA7E5004FBB3A /* lxrtx.png */,
 				B8644B481907A50C00238B15 /* bgico.png */,
 				B8644B44190788E400238B15 /* dbsx@2x.png */,
 				B8644B45190788E400238B15 /* dbsx.png */,
@@ -341,9 +347,11 @@
 				B8644B3F1907871C00238B15 /* bwl@2x.png in Resources */,
 				242DFA911904F4B30067B111 /* Images.xcassets in Resources */,
 				242DFA831904F4B30067B111 /* InfoPlist.strings in Resources */,
+				B8A03BDA190FA7E5004FBB3A /* lxrtx.png in Resources */,
 				B8644B421907871C00238B15 /* bwl.png in Resources */,
 				B8644B47190788E400238B15 /* dbsx.png in Resources */,
 				242DFA8C1904F4B30067B111 /* Main.storyboard in Resources */,
+				B8A03BDC190FA87D004FBB3A /* fgx.png in Resources */,
 				B8644B46190788E400238B15 /* dbsx@2x.png in Resources */,
 				B8644B401907871C00238B15 /* lxr@2x.png in Resources */,
 			);

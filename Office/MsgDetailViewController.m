@@ -14,6 +14,8 @@
 
 @implementation MsgDetailViewController
 
+#pragma mark - Managing the detail item
+
 - (void)setDetailItem:(id)newDetailItem
 {
     if (_detailItem != newDetailItem) {
@@ -30,24 +32,22 @@
     // Update the user interface for the detail item.
     
     if (self.detailItem) {
-        self.detailmsgfrom.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"messagefrom"]];
-        self.detailTime.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"messagedate"]];
-        self.detailmsg.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"messagecontent"]];
+        self.detailmsgfrom.text = [NSString stringWithFormat:@"  %@",[_detailItem objectForKey:@"messagefrom"]];
+        self.detailTime.text = [NSString stringWithFormat:@"  %@",[_detailItem objectForKey:@"messagedate"]];
+        
+        self.detailmsgcount.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"messagecontent"]];
+      
+        
+        
+        NSLog(@"%@,%@,%@",[NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"messagefrom"]],[NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"messagedate"]],[NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"messagecontent"]]);
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureView];
 	// Do any additional setup after loading the view.
 }
 

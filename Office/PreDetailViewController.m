@@ -31,8 +31,8 @@
     // Update the user interface for the detail item.
     
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predocontent"]];
-        self.detailTime.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predodate"]];
+
+        self.detailTime.text = [NSString stringWithFormat:@"  截止时间%@",[_detailItem objectForKey:@"predodate"]];
         self.detailpredo.text = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predodetail"]];
     }
 }
@@ -41,6 +41,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+   
+    NSString *ss = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predocontent"]];
+    
+    
+    
+    //[self.navigationItem setTitle:[NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predocontent"]]];
+    if (ss.length>= 10) {
+        
+       [self.navigationItem setTitle:[[ss substringWithRange:NSMakeRange(0, 10)]stringByAppendingString:@"..."]];
+        
+       }
+    
+       else
+      
+       [self.navigationItem setTitle:ss];
+    
     [self configureView];
 }
 
@@ -49,6 +66,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
 
