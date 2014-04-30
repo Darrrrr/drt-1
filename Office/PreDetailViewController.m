@@ -45,7 +45,9 @@
    
     NSString *ss = [NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predocontent"]];
     
+   //设置背景图片
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"textbg.png"] ];
     
     //[self.navigationItem setTitle:[NSString stringWithFormat:@"%@",[_detailItem objectForKey:@"predocontent"]]];
     if (ss.length>= 10) {

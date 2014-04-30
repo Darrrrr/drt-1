@@ -13,6 +13,7 @@
 + (NSMutableArray *)findAllPredo
 {
     __block NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:0];
+   
     FMDatabaseQueue *queue = [DBManager queue];
     [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         if ([db open])
@@ -22,7 +23,7 @@
             {
                 //create table predo(id integer primary key autoincrement,user_id integer,predocontent text,predodate text,predodetail text,state boolen
                 NSDictionary *dic = @{@"predocontent": [rs stringForColumn:@"predocontent"],@"predodate":[rs stringForColumn:@"predodate"],@"predodetail": [rs stringForColumn:@"predodetail"],@"predostate": [rs stringForColumn:@"state"]};
-                [mutableArray addObject:dic];                         
+                [mutableArray addObject:dic];
             }
         }
     }];
@@ -31,6 +32,37 @@
     //NSLog(@"Predo.h____resultArray___%@",resultArray);
     return resultArray;
 }
+
++ (void)upDateStatus:(int)updateID  fromStatus:(BOOL)status{
+    
+   FMDatabase *dataBase = [DBManager createDataBase];
+
+
+    if ([dataBase open]) {
+       
+        NSString *sql = [NSString stringWithFormat:@"update predo set state = \"完成\" where id = \"%d\" ",updateID+1];
+        
+        NSString *sql1 = [NSString stringWithFormat:@"update predo set state = \"未完成\" where id = \"%d\" ",updateID+1];
+       
+        if(status){
+        
+         [dataBase executeUpdate:sql];
+            NSLog(@"chage status。。。。。。。。。。。。。1");
+        }
+        else
+        {
+        [dataBase executeUpdate:sql1];
+        NSLog(@"chage status。。。。。。。。。。。。。2");
+        }
+        [dataBase close];
+        
+    
+                 
+    }
+
+
+}
+
 
 //+(NSComparisonResult)compare:(NSDictionary *)otherDictionary
 //{

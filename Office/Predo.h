@@ -14,4 +14,7 @@
 + (NSMutableArray *)findAllPredo;
 
 //+ (NSComparisonResult)compare:(NSDictionary *)otherDictionary;
+
++ (void)upDateStatus:(int)updateID fromStatus:(BOOL)status;
+
 @end

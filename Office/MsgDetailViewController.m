@@ -48,6 +48,10 @@
 {
     [super viewDidLoad];
     [self configureView];
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed:@"textbg.png"] ];
+ 
+    
 	// Do any additional setup after loading the view.
 }
 

@@ -86,6 +86,11 @@ static FMDatabase *dataBase = nil;
             NSString *sql3_1 = @"insert into message(id,user_id,messagecontent,messagefrom,messagedate,state) values (\"1\",\"1\",\"学习iOS——segue/n学习了大量关于页面跳转的问题学会了很多很多知识，如这个跳转那个跳转\",\"msgfrom:123\",\"2014.2.22\",\"未完成\")";
             NSString *sql3_2 = @"insert into message(id,user_id,predocontent,predodate,predodetail,state) values (\"2\",\"2\",\"学习iOS——ARC/n学习了大量关于ARC的问题学会了很多很多知识，如这个ARC那个ARC\",\"msgfrom:456\",\"2014.2.23\",\"未完成\")";
             NSString *sql3_3 = @"insert into message(id,user_id,predocontent,predodate,predodetail,state) values (\"3\",\"1\",\"学习iOS——oc学习/n学习了大量关于oc的问题学会了很多很多知识，如这个oc那个oc\",\"msgfrom:123\",\"2014.2.24\",\"未完成\")";
+            NSString *sql4 = @"create table contact(id integer primary key autoincrement,name text,telephone text,email text,address text)";
+            NSString *sql4_1 = @"insert into contact(id,name,telephone,email,address) values (\"1\",\"孙晨辉\",\"15822518211\",\"sch199210@163.com\",\"天津工业大学\")";
+            NSString *sql4_2 = @"insert into contact(id,name,telephone,email,address) values (\"2\",\"郭政宇\",\"15849331568\",\"877246669@qq.com\",\"天津工业大学\")";
+            NSString *sql4_3 = @"insert into contact(id,name,telephone,email,address) values (\"3\",\"程伟\",\"15620501606\",\"chengwei@163.com\",\"南开区海泰人才大厦\")";
+            NSString *sql4_4 = @"insert into contact(name,telephone,email,address) values (\"孙政伟\",\"15820501568\",\"87719921@qq.com\",\"天津工业大学\")";
             if (![DBManager isTableExist:@"user"]) {
                 NSLog(@"no manager table");
                 [dataBase executeUpdate:sql1];
@@ -130,7 +135,20 @@ static FMDatabase *dataBase = nil;
                 NSLog(@"插入三条数据");
             }
             
-            if (![DBManager isTableExist:@"user"] && ![DBManager isTableExist:@"predo"] && ![DBManager isTableExist:@"message"]) {
+            if (![DBManager isTableExist:@"contact"]) {
+                NSLog(@"no predo table");
+                [dataBase executeUpdate:sql4];
+            }
+            
+            if ([DBManager isTableExist:@"contact"]) {
+                [dataBase executeUpdate:sql4_1];
+                [dataBase executeUpdate:sql4_2];
+                [dataBase executeUpdate:sql4_3];
+                [dataBase executeUpdate:sql4_4];
+                NSLog(@"插入四条数据");
+            }
+            
+            if (![DBManager isTableExist:@"user"] && ![DBManager isTableExist:@"predo"] && ![DBManager isTableExist:@"message"] && ![DBManager isTableExist:@"contact"]) {
                 NSLog(@"创建表失败");
             }
             else

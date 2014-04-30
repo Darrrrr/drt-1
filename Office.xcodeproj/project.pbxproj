@@ -28,12 +28,19 @@
 		243F2E5B190F4A5A006AC293 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F2E5A190F4A5A006AC293 /* MessageViewController.m */; };
 		243F2E5E190F4AE8006AC293 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F2E5D190F4AE8006AC293 /* Message.m */; };
 		243F2E61190F57E7006AC293 /* MsgDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 243F2E60190F57E7006AC293 /* MsgDetailViewController.m */; };
+		246C8E11191083AF007A49F8 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 246C8E10191083AF007A49F8 /* Contact.m */; };
+		246C8E16191083F0007A49F8 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246C8E13191083F0007A49F8 /* ContactViewController.m */; };
+		246C8E17191083F0007A49F8 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246C8E15191083F0007A49F8 /* ContactDetailViewController.m */; };
 		24D721A8190A00CF00A229AA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721A7190A00CF00A229AA /* DBManager.m */; };
 		24D721AB190A010F00A229AA /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721AA190A010F00A229AA /* UserManager.m */; };
 		24D721B1190A20E600A229AA /* Predo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721B0190A20E600A229AA /* Predo.m */; };
 		B808A925190F3774000554D2 /* predoList.png in Resources */ = {isa = PBXBuildFile; fileRef = B808A924190F3774000554D2 /* predoList.png */; };
 		B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A61190E422600E105F5 /* PretodoViewController.m */; };
 		B8221A65190E46BD00E105F5 /* PreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A64190E46BD00E105F5 /* PreDetailViewController.m */; };
+		B829CD611910972D00028BA7 /* textbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD601910972D00028BA7 /* textbg.png */; };
+		B829CD651910DC9D00028BA7 /* ditu.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD621910DC9D00028BA7 /* ditu.png */; };
+		B829CD661910DC9D00028BA7 /* youjian.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD631910DC9D00028BA7 /* youjian.png */; };
+		B829CD671910DC9D00028BA7 /* xinxi.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD641910DC9D00028BA7 /* xinxi.png */; };
 		B8644B3E1907871C00238B15 /* xx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B381907871C00238B15 /* xx@2x.png */; };
 		B8644B3F1907871C00238B15 /* bwl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B391907871C00238B15 /* bwl@2x.png */; };
 		B8644B401907871C00238B15 /* lxr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B3A1907871C00238B15 /* lxr@2x.png */; };
@@ -92,6 +99,12 @@
 		243F2E5D190F4AE8006AC293 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		243F2E5F190F57E7006AC293 /* MsgDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgDetailViewController.h; sourceTree = "<group>"; };
 		243F2E60190F57E7006AC293 /* MsgDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgDetailViewController.m; sourceTree = "<group>"; };
+		246C8E0F191083AF007A49F8 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		246C8E10191083AF007A49F8 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		246C8E12191083F0007A49F8 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
+		246C8E13191083F0007A49F8 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		246C8E14191083F0007A49F8 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
+		246C8E15191083F0007A49F8 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
 		24D721A5190A00CF00A229AA /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		24D721A6190A00CF00A229AA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		24D721A7190A00CF00A229AA /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -104,6 +117,10 @@
 		B8221A61190E422600E105F5 /* PretodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PretodoViewController.m; sourceTree = "<group>"; };
 		B8221A63190E46BD00E105F5 /* PreDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreDetailViewController.h; sourceTree = "<group>"; };
 		B8221A64190E46BD00E105F5 /* PreDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreDetailViewController.m; sourceTree = "<group>"; };
+		B829CD601910972D00028BA7 /* textbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textbg.png; sourceTree = "<group>"; };
+		B829CD621910DC9D00028BA7 /* ditu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ditu.png; sourceTree = "<group>"; };
+		B829CD631910DC9D00028BA7 /* youjian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youjian.png; sourceTree = "<group>"; };
+		B829CD641910DC9D00028BA7 /* xinxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xinxi.png; sourceTree = "<group>"; };
 		B8644B381907871C00238B15 /* xx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xx@2x.png"; sourceTree = "<group>"; };
 		B8644B391907871C00238B15 /* bwl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bwl@2x.png"; sourceTree = "<group>"; };
 		B8644B3A1907871C00238B15 /* lxr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lxr@2x.png"; sourceTree = "<group>"; };
@@ -194,20 +211,15 @@
 		242DFA7E1904F4B30067B111 /* Office */ = {
 			isa = PBXGroup;
 			children = (
+				246C8E0E1910836D007A49F8 /* Contact */,
+				246C8E0D19108362007A49F8 /* Message */,
+				246C8E091910833E007A49F8 /* Predo */,
 				24D721A4190A00B400A229AA /* DB */,
 				242DFA871904F4B30067B111 /* OfficeAppDelegate.h */,
 				242DFA881904F4B30067B111 /* OfficeAppDelegate.m */,
 				242DFA8A1904F4B30067B111 /* Main.storyboard */,
 				242DFA8D1904F4B30067B111 /* OfficeViewController.h */,
 				242DFA8E1904F4B30067B111 /* OfficeViewController.m */,
-				B8221A60190E422600E105F5 /* PretodoViewController.h */,
-				B8221A61190E422600E105F5 /* PretodoViewController.m */,
-				B8221A63190E46BD00E105F5 /* PreDetailViewController.h */,
-				B8221A64190E46BD00E105F5 /* PreDetailViewController.m */,
-				243F2E59190F4A5A006AC293 /* MessageViewController.h */,
-				243F2E5A190F4A5A006AC293 /* MessageViewController.m */,
-				243F2E5F190F57E7006AC293 /* MsgDetailViewController.h */,
-				243F2E60190F57E7006AC293 /* MsgDetailViewController.m */,
 				242DFA771904F4B30067B111 /* Frameworks */,
 				242DFA901904F4B30067B111 /* Images.xcassets */,
 				B8B1A4701909E85000697710 /* UI */,
@@ -227,6 +239,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		246C8E091910833E007A49F8 /* Predo */ = {
+			isa = PBXGroup;
+			children = (
+				B8221A60190E422600E105F5 /* PretodoViewController.h */,
+				B8221A61190E422600E105F5 /* PretodoViewController.m */,
+				B8221A63190E46BD00E105F5 /* PreDetailViewController.h */,
+				B8221A64190E46BD00E105F5 /* PreDetailViewController.m */,
+			);
+			name = Predo;
+			sourceTree = "<group>";
+		};
+		246C8E0D19108362007A49F8 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				243F2E59190F4A5A006AC293 /* MessageViewController.h */,
+				243F2E5A190F4A5A006AC293 /* MessageViewController.m */,
+				243F2E5F190F57E7006AC293 /* MsgDetailViewController.h */,
+				243F2E60190F57E7006AC293 /* MsgDetailViewController.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		246C8E0E1910836D007A49F8 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				246C8E12191083F0007A49F8 /* ContactViewController.h */,
+				246C8E13191083F0007A49F8 /* ContactViewController.m */,
+				246C8E14191083F0007A49F8 /* ContactDetailViewController.h */,
+				246C8E15191083F0007A49F8 /* ContactDetailViewController.m */,
+			);
+			name = Contact;
+			sourceTree = "<group>";
+		};
 		24D721A4190A00B400A229AA /* DB */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +284,8 @@
 				24D721B0190A20E600A229AA /* Predo.m */,
 				243F2E5C190F4AE8006AC293 /* Message.h */,
 				243F2E5D190F4AE8006AC293 /* Message.m */,
+				246C8E0F191083AF007A49F8 /* Contact.h */,
+				246C8E10191083AF007A49F8 /* Contact.m */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -247,6 +294,10 @@
 			isa = PBXGroup;
 			children = (
 				B808A924190F3774000554D2 /* predoList.png */,
+				B829CD621910DC9D00028BA7 /* ditu.png */,
+				B829CD631910DC9D00028BA7 /* youjian.png */,
+				B829CD641910DC9D00028BA7 /* xinxi.png */,
+				B829CD601910972D00028BA7 /* textbg.png */,
 				B8A03BDB190FA87D004FBB3A /* fgx.png */,
 				B8A03BD9190FA7E5004FBB3A /* lxrtx.png */,
 				B8644B481907A50C00238B15 /* bgico.png */,
@@ -347,9 +398,13 @@
 				B8644B3F1907871C00238B15 /* bwl@2x.png in Resources */,
 				242DFA911904F4B30067B111 /* Images.xcassets in Resources */,
 				242DFA831904F4B30067B111 /* InfoPlist.strings in Resources */,
+				B829CD651910DC9D00028BA7 /* ditu.png in Resources */,
 				B8A03BDA190FA7E5004FBB3A /* lxrtx.png in Resources */,
 				B8644B421907871C00238B15 /* bwl.png in Resources */,
+				B829CD661910DC9D00028BA7 /* youjian.png in Resources */,
+				B829CD671910DC9D00028BA7 /* xinxi.png in Resources */,
 				B8644B47190788E400238B15 /* dbsx.png in Resources */,
+				B829CD611910972D00028BA7 /* textbg.png in Resources */,
 				242DFA8C1904F4B30067B111 /* Main.storyboard in Resources */,
 				B8A03BDC190FA87D004FBB3A /* fgx.png in Resources */,
 				B8644B46190788E400238B15 /* dbsx@2x.png in Resources */,
@@ -372,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24D721B1190A20E600A229AA /* Predo.m in Sources */,
+				246C8E11191083AF007A49F8 /* Contact.m in Sources */,
 				242DFA891904F4B30067B111 /* OfficeAppDelegate.m in Sources */,
 				242DFA851904F4B30067B111 /* main.m in Sources */,
 				24D721AB190A010F00A229AA /* UserManager.m in Sources */,
@@ -383,8 +439,10 @@
 				242DFA8F1904F4B30067B111 /* OfficeViewController.m in Sources */,
 				B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */,
 				2409D7D81909F7020063BD61 /* FMDatabasePool.m in Sources */,
+				246C8E16191083F0007A49F8 /* ContactViewController.m in Sources */,
 				2409D7D71909F7020063BD61 /* FMDatabaseAdditions.m in Sources */,
 				243F2E61190F57E7006AC293 /* MsgDetailViewController.m in Sources */,
+				246C8E17191083F0007A49F8 /* ContactDetailViewController.m in Sources */,
 				2409D7D91909F7020063BD61 /* FMDatabaseQueue.m in Sources */,
 				B8221A65190E46BD00E105F5 /* PreDetailViewController.m in Sources */,
 			);

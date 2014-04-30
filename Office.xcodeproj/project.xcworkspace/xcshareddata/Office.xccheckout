@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B541CDB7-8B5C-41CC-939D-60C47E813898</string>
+	<string>BC9DBA4F-0B70-42D3-AD4D-88688571795C</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Office</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F1223B05-B750-4F61-ACA3-611CEA6724C1</key>
-		<string>https://github.com/sunchenhui/drt.git</string>
+		<key>1BBD4B87-1191-4ECC-B3BF-47F6F87AAE02</key>
+		<string>https://github.com/sunchenhui/trunk.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Office.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F1223B05-B750-4F61-ACA3-611CEA6724C1</key>
+		<key>1BBD4B87-1191-4ECC-B3BF-47F6F87AAE02</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sunchenhui/drt.git</string>
+	<string>https://github.com/sunchenhui/trunk.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F1223B05-B750-4F61-ACA3-611CEA6724C1</string>
+	<string>1BBD4B87-1191-4ECC-B3BF-47F6F87AAE02</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F1223B05-B750-4F61-ACA3-611CEA6724C1</string>
+			<string>1BBD4B87-1191-4ECC-B3BF-47F6F87AAE02</string>
 			<key>IDESourceControlWCCName</key>
-			<string>drtsss</string>
+			<string>trunk</string>
 		</dict>
 	</array>
 </dict>

@@ -12,6 +12,7 @@
 #define preDateTag 1
 #define preDoTag 2
 #define preDoStateTag 3
+#define preSwitch 4
 
 @interface PretodoViewController ()
 
@@ -50,6 +51,12 @@
 
 - (void)freshList:(id)sender
 {
+    array = [Predo findAllPredo];
+    [table setDelegate:self];
+    [table setDataSource:self];
+
+    
+    [table reloadData];
    
     NSLog(@"fresh");
 
@@ -76,6 +83,19 @@
     UILabel *_preDate = (UILabel *)[cell.contentView viewWithTag:preDateTag];
     UILabel *_preDo = (UILabel *)[cell.contentView viewWithTag:preDoTag];
     UILabel *_prestate = (UILabel *)[cell.contentView viewWithTag:preDoStateTag];
+    //switch
+    UISwitch *_preSwitch = (UISwitch *)[cell.contentView viewWithTag:preSwitch];
+    
+    
+    
+    NSString *ss=[predoDic objectForKey:@"predostate"];
+    if([ss isEqual:@"完成"]){
+      [_preSwitch setOn:YES ];
+    
+    }else
+    {[_preSwitch setOn:NO ];}
+    [_preSwitch addTarget:self action:@selector(switchAction:) forControlEvents:UIControlEventValueChanged];
+
     [_preDate setText:[NSString stringWithFormat:@"截止时间：%@",[predoDic objectForKey:@"predodate"]]];
     [_preDo setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predocontent"]]];
     [_prestate setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predostate"]]];
@@ -85,6 +105,43 @@
    
     return cell;
 }
+
+
+-(void)switchAction:(id)sender
+{
+    UISwitch *switchButton = (UISwitch*)sender;
+    BOOL isButtonOn = [switchButton isOn];
+     UITableViewCell *cell = (UITableViewCell *)[[[sender superview] superview] superview];     if (!isButtonOn) {
+         
+        NSLog(@"switch on foundb = %d", [table indexPathForCell:cell].row);
+       
+        //修改数据库
+
+        [Predo upDateStatus:[table indexPathForCell:cell].row fromStatus:isButtonOn];
+        
+    }else {
+        
+               
+        NSLog(@"switch off foundb = %d", [table indexPathForCell:cell].row);
+        //修改数据库
+
+        [Predo upDateStatus:[table indexPathForCell:cell].row fromStatus:isButtonOn];
+        
+      
+           }
+    [self performSelector:@selector(reloadcell:) withObject:cell afterDelay:0.3f];
+    
+    
+}
+
+- (void)reloadcell:(UITableViewCell *)cell
+{
+    array = [Predo findAllPredo];
+ 
+    [table reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:[table indexPathForCell:cell].row inSection:0] ]withRowAnimation:UITableViewRowAnimationAutomatic];
+        NSLog(@"execute");
+}
+
 
 
 /*自定义返回
