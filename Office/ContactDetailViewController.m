@@ -114,14 +114,65 @@
     [[UIApplication sharedApplication] openURL:url];
      NSLog(@"address%hhd",[[UIApplication sharedApplication] openURL:url]);
 }
-//发短信
-- (IBAction)sendMSG:(id)sender {
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"sms:+%@",[_detailItem objectForKey:@"telephone"]]];
-    [[UIApplication sharedApplication] openURL:url];
 
-    NSLog(@"%@",url);
-    [[UIApplication sharedApplication] openURL:url];
-    NSLog(@"%hhd",[[UIApplication sharedApplication] openURL:url]);
+
+
+
+- (IBAction)showSMSPicker:(id)sender{
+    Class messageClass = (NSClassFromString(@"MFMessageComposeViewController"));
+    if (messageClass != nil) {
+        if ([messageClass canSendText]) {
+            [self displaySMSComposerSheet];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"设备没有短信功能" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+            [alert show];
+         
+        }
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"iOS版本过低,iOS4.0以上才支持程序内发送短信" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+        [alert show];
+       
+    }
 }
+
+- (void)displaySMSComposerSheet {
+    MFMessageComposeViewController *picker = [[MFMessageComposeViewController alloc] init];
+    picker.messageComposeDelegate = self;
+    
+   
+        NSString *msg = [NSString stringWithFormat:@"string"];
+        picker.body = [[NSString alloc] initWithString:msg];
+    
+    picker.recipients = [_detailItem objectForKey:@"telephone"];
+    [self presentModalViewController:picker animated:YES];
+    
+}
+
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    switch (result)
+    {
+        case MessageComposeResultCancelled:
+            //LOG_EXPR(@"Result: SMS sending canceled");
+            break;
+        case MessageComposeResultSent:
+        {        }
+            break;
+        case MessageComposeResultFailed:
+        {
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"发送失败" delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil];
+            [alert show];
+           
+            
+        }
+            break;
+        default:
+            //LOG_EXPR(@"Result: SMS not sent");
+            break;
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
 @end

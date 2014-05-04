@@ -10,7 +10,7 @@
 
 @implementation Predo
 
-+ (NSMutableArray *)findAllPredo
++ (NSMutableArray *)findAllPredo:(int)userID
 {
     __block NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:0];
    
@@ -18,48 +18,56 @@
     [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         if ([db open])
         {
-            FMResultSet *rs = [db executeQuery:@"select * from predo"];
+         
+            //这里为啥用\"%d\",userID就不行呢？ 网上说要转成NSObject的子类 但是下面的改状态这个方法就可以
+            FMResultSet *rs = [db executeQuery:@"select * from predo where user_id = ? ",[NSNumber numberWithInt:userID]];
+           // FMResultSet *rs = [db executeQuery:@"select * from predo where user_id = \"%d\"",userID];
+            NSLog(@"select * from predo where user_id = \"%d\" ",userID);
             while ([rs next])
             {
                 //create table predo(id integer primary key autoincrement,user_id integer,predocontent text,predodate text,predodetail text,state boolen
-                NSDictionary *dic = @{@"predocontent": [rs stringForColumn:@"predocontent"],@"predodate":[rs stringForColumn:@"predodate"],@"predodetail": [rs stringForColumn:@"predodetail"],@"predostate": [rs stringForColumn:@"state"]};
+                NSDictionary *dic = @{@"predocontent": [rs stringForColumn:@"predocontent"],@"predodate":[rs stringForColumn:@"predodate"],@"predodetail": [rs stringForColumn:@"predodetail"],@"predostate": [rs stringForColumn:@"state"],@"predoid": [rs stringForColumn:@"id"]};
                 [mutableArray addObject:dic];
             }
         }
     }];
     //NSLog(@"Predo.h____mutableArray___%@",mutableArray);
    NSMutableArray *resultArray = [mutableArray copy];
-    //NSLog(@"Predo.h____resultArray___%@",resultArray);
+    NSLog(@"Predo.h____resultArray___%@  with id = %d",resultArray,userID);
     return resultArray;
 }
 
 + (void)upDateStatus:(int)updateID  fromStatus:(BOOL)status{
+
     
-   FMDatabase *dataBase = [DBManager createDataBase];
-
-
-    if ([dataBase open]) {
-       
-        NSString *sql = [NSString stringWithFormat:@"update predo set state = \"完成\" where id = \"%d\" ",updateID+1];
-        
-        NSString *sql1 = [NSString stringWithFormat:@"update predo set state = \"未完成\" where id = \"%d\" ",updateID+1];
-       
-        if(status){
-        
-         [dataBase executeUpdate:sql];
-            NSLog(@"chage status。。。。。。。。。。。。。1");
-        }
-        else
+    FMDatabaseQueue *queue = [DBManager queue];
+    [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        if ([db open])
         {
-        [dataBase executeUpdate:sql1];
-        NSLog(@"chage status。。。。。。。。。。。。。2");
-        }
-        [dataBase close];
+            
         
-    
-                 
-    }
+        
+        
+            
+                   NSString *sql = [NSString stringWithFormat:@"update predo set state = \"完成\" where id = \"%d\" ",updateID];
+            
+                   NSString *sql1 = [NSString stringWithFormat:@"update predo set state = \"未完成\" where id = \"%d\" ",updateID];
+            
+                    if(status){
+            
+                    [db executeUpdate:sql];
+                       NSLog(@"chage status。。。。。。。。。。。。。1");
+                   }
+                   else
+                   {
+                   [db executeUpdate:sql1];
+                   NSLog(@"chage status。。。。。。。。。。。。。2");
+                   }
 
+        
+        
+        }
+    }];
 
 }
 

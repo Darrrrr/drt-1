@@ -10,8 +10,9 @@
 
 @interface MessageViewController : UITableViewController
 
-@property (strong, nonatomic) IBOutlet UITableView *table;
+@property (retain, nonatomic) NSMutableArray *array;
 
-@property (strong, nonatomic) NSMutableArray *array;
+@property  (assign,nonatomic) int userID;
+- (IBAction)addMessage:(id)sender;
 
 @end

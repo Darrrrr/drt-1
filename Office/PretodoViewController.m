@@ -13,14 +13,16 @@
 #define preDoTag 2
 #define preDoStateTag 3
 #define preSwitch 4
+#define preid 5
 
 @interface PretodoViewController ()
 
 @end
 
 @implementation PretodoViewController
-@synthesize table;
-@synthesize array;
+
+@synthesize array,userID,table;
+
 
 
 - (void)awakeFromNib
@@ -37,7 +39,12 @@
     UIBarButtonItem *freshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(freshList:)];
     self.navigationItem.rightBarButtonItem = freshButton;
     
-    array = [Predo findAllPredo];
+    NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
+    NSString *ID = [local objectForKey:@"userID"];
+    
+    userID = [ID intValue] ;
+   
+    array = [Predo findAllPredo:userID];
     NSLog(@"PredoViewController.h++++array++%@",array);
     [table setDelegate:self];
     [table setDataSource:self];
@@ -51,7 +58,7 @@
 
 - (void)freshList:(id)sender
 {
-    array = [Predo findAllPredo];
+    array = [Predo findAllPredo:userID];
     [table setDelegate:self];
     [table setDataSource:self];
 
@@ -85,6 +92,7 @@
     UILabel *_prestate = (UILabel *)[cell.contentView viewWithTag:preDoStateTag];
     //switch
     UISwitch *_preSwitch = (UISwitch *)[cell.contentView viewWithTag:preSwitch];
+    UILabel *_preid = (UILabel *)[cell.contentView viewWithTag:preid];
     
     
     
@@ -99,6 +107,7 @@
     [_preDate setText:[NSString stringWithFormat:@"截止时间：%@",[predoDic objectForKey:@"predodate"]]];
     [_preDo setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predocontent"]]];
     [_prestate setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predostate"]]];
+    [_preid setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predoid"]]];
     
     
     
@@ -117,7 +126,7 @@
        
         //修改数据库
 
-        [Predo upDateStatus:[table indexPathForCell:cell].row fromStatus:isButtonOn];
+        [Predo upDateStatus:[[(UILabel *)[cell.contentView viewWithTag:preid] text] intValue]fromStatus:isButtonOn];
         
     }else {
         
@@ -125,7 +134,7 @@
         NSLog(@"switch off foundb = %d", [table indexPathForCell:cell].row);
         //修改数据库
 
-        [Predo upDateStatus:[table indexPathForCell:cell].row fromStatus:isButtonOn];
+        [Predo upDateStatus:[[(UILabel *)[cell.contentView viewWithTag:preid] text] intValue] fromStatus:isButtonOn];
         
       
            }
@@ -136,7 +145,7 @@
 
 - (void)reloadcell:(UITableViewCell *)cell
 {
-    array = [Predo findAllPredo];
+    array = [Predo findAllPredo:userID];
  
     [table reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:[table indexPathForCell:cell].row inSection:0] ]withRowAnimation:UITableViewRowAnimationAutomatic];
         NSLog(@"execute");

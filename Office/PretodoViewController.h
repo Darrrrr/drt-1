@@ -11,7 +11,7 @@
 @interface PretodoViewController : UITableViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *table;
-
+@property  (assign,nonatomic) int userID;
 @property (strong, nonatomic) NSMutableArray *array;
 
 @end

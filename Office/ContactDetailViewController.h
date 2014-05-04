@@ -21,8 +21,8 @@
 - (IBAction)_telephone:(id)sender;
 - (IBAction)sendEmail:(id)sender;
 - (IBAction)address:(id)sender;
+- (IBAction)showSMSPicker:(id)sender;
 
-- (IBAction)sendMSG:(id)sender;
 
 
 @end

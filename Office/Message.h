@@ -11,6 +11,8 @@
 
 @interface Message : NSObject
 
-+ (NSMutableArray *)findAllMessage;
++ (NSMutableArray *)findAllMessage:(int)userID;
++ (void)deleteMessage:(int)withRow;
++ (void)addMessage:(int)toPerson;
 
 @end

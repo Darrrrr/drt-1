@@ -29,20 +29,22 @@
     username.text = [local objectForKey:@"UserName"];
     password.text = [local objectForKey:@"Password"];
     
-    
+    NSLog(@"9999999999999999%@",[local objectForKey:@"userID"]);
     
 }
 
 
 
 //保存用户信息
-- (void)saveUserNameAndPwd:(NSString *)userName andPwd:(NSString *)pwd
+- (void)saveUserNameAndPwd:(NSString *)userName andPwd:(NSString *)pwd withID:(NSString *)userID
 {
     NSUserDefaults * settings = [NSUserDefaults standardUserDefaults];
     [settings removeObjectForKey:@"UserName"];
     [settings removeObjectForKey:@"Password"];
+    [settings removeObjectForKey:@"UserID"];
     [settings setObject:userName forKey:@"UserName"];
     [settings setObject:pwd forKey:@"Password"];
+    [settings setObject:userID forKey:@"userID"];
     [settings synchronize];
 }
 
@@ -66,7 +68,7 @@
         NSLog(@"登陆成功");
         
         //保存用户名和密码
-        [self saveUserNameAndPwd:_username andPwd:_password];
+        [self saveUserNameAndPwd:_username andPwd:_password withID:[NSString stringWithFormat:@"%d",user_id]];
         
         
         

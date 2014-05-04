@@ -11,7 +11,7 @@
 
 @interface Predo : NSObject
 
-+ (NSMutableArray *)findAllPredo;
++ (NSMutableArray *)findAllPredo:(int)userID;
 
 //+ (NSComparisonResult)compare:(NSDictionary *)otherDictionary;
 

@@ -42,6 +42,7 @@
 		B829CD661910DC9D00028BA7 /* youjian.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD631910DC9D00028BA7 /* youjian.png */; };
 		B829CD671910DC9D00028BA7 /* xinxi.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD641910DC9D00028BA7 /* xinxi.png */; };
 		B829CD691910FCEE00028BA7 /* fgx.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD681910FCEE00028BA7 /* fgx.png */; };
+		B83B010C1916345C00F7365F /* MessageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B010B1916345C00F7365F /* MessageAlertView.m */; };
 		B8644B3E1907871C00238B15 /* xx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B381907871C00238B15 /* xx@2x.png */; };
 		B8644B3F1907871C00238B15 /* bwl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B391907871C00238B15 /* bwl@2x.png */; };
 		B8644B401907871C00238B15 /* lxr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B3A1907871C00238B15 /* lxr@2x.png */; };
@@ -122,6 +123,8 @@
 		B829CD631910DC9D00028BA7 /* youjian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youjian.png; sourceTree = "<group>"; };
 		B829CD641910DC9D00028BA7 /* xinxi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xinxi.png; sourceTree = "<group>"; };
 		B829CD681910FCEE00028BA7 /* fgx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgx.png; sourceTree = "<group>"; };
+		B83B010A1916345C00F7365F /* MessageAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAlertView.h; sourceTree = "<group>"; };
+		B83B010B1916345C00F7365F /* MessageAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAlertView.m; sourceTree = "<group>"; };
 		B8644B381907871C00238B15 /* xx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xx@2x.png"; sourceTree = "<group>"; };
 		B8644B391907871C00238B15 /* bwl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bwl@2x.png"; sourceTree = "<group>"; };
 		B8644B3A1907871C00238B15 /* lxr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lxr@2x.png"; sourceTree = "<group>"; };
@@ -257,6 +260,8 @@
 				243F2E5A190F4A5A006AC293 /* MessageViewController.m */,
 				243F2E5F190F57E7006AC293 /* MsgDetailViewController.h */,
 				243F2E60190F57E7006AC293 /* MsgDetailViewController.m */,
+				B83B010A1916345C00F7365F /* MessageAlertView.h */,
+				B83B010B1916345C00F7365F /* MessageAlertView.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				2409D7D71909F7020063BD61 /* FMDatabaseAdditions.m in Sources */,
 				243F2E61190F57E7006AC293 /* MsgDetailViewController.m in Sources */,
 				246C8E17191083F0007A49F8 /* ContactDetailViewController.m in Sources */,
+				B83B010C1916345C00F7365F /* MessageAlertView.m in Sources */,
 				2409D7D91909F7020063BD61 /* FMDatabaseQueue.m in Sources */,
 				B8221A65190E46BD00E105F5 /* PreDetailViewController.m in Sources */,
 			);
