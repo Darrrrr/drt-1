@@ -7,13 +7,14 @@
 //
 
 #import "ContactDetailViewController.h"
+#import "QRCodeGenerator.h"
 
 @interface ContactDetailViewController ()
 - (void)configureView;
 @end
 
 @implementation ContactDetailViewController
-
+@synthesize imageView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -135,6 +136,14 @@
         [alert show];
        
     }
+}
+
+//生成二维码
+- (IBAction)button:(id)sender {
+    NSError *error;
+    NSString *string = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:_detailItem options:NSJSONWritingPrettyPrinted error:&error ] encoding:NSUTF8StringEncoding];
+    imageView.image = [QRCodeGenerator qrImageForString:string imageSize:imageView.bounds.size.width];
+    
 }
 
 - (void)displaySMSComposerSheet {

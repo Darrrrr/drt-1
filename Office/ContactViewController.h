@@ -15,4 +15,5 @@
 
 @property (strong, nonatomic) NSMutableArray *array;
 
+@property (strong, nonatomic) NSMutableDictionary *dic;
 @end

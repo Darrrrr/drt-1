@@ -90,7 +90,7 @@ static FMDatabase *dataBase = nil;
             NSString *sql4_1 = @"insert into contact(id,name,telephone,email,address) values (\"1\",\"孙晨辉\",\"15822518211\",\"sch199210@163.com\",\"天津工业大学\")";
             NSString *sql4_2 = @"insert into contact(id,name,telephone,email,address) values (\"2\",\"郭政宇\",\"15849331568\",\"877246669@qq.com\",\"天津工业大学\")";
             NSString *sql4_3 = @"insert into contact(id,name,telephone,email,address) values (\"3\",\"程伟\",\"15620501606\",\"chengwei@163.com\",\"南开区海泰人才大厦\")";
-            NSString *sql4_4 = @"insert into contact(name,telephone,email,address) values (\"孙政伟\",\"15820501568\",\"87719921@qq.com\",\"天津工业大学\")";
+            NSString *sql4_4 = @"insert into contact(id,name,telephone,email,address) values (\"4\",\"孙政伟\",\"15820501568\",\"87719921@qq.com\",\"天津工业大学\")";
             if (![DBManager isTableExist:@"user"]) {
                 NSLog(@"no manager table");
                 [dataBase executeUpdate:sql1];

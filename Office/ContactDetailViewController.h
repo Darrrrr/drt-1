@@ -18,10 +18,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *telephone;
 @property (weak, nonatomic) IBOutlet UILabel *email;
 @property (weak, nonatomic) IBOutlet UILabel *address;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)_telephone:(id)sender;
 - (IBAction)sendEmail:(id)sender;
 - (IBAction)address:(id)sender;
 - (IBAction)showSMSPicker:(id)sender;
+
+- (IBAction)button:(id)sender;
 
 
 
