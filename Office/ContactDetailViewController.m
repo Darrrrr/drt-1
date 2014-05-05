@@ -62,15 +62,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//打电话
+
+/**************
+     打电话
+ **************/
+
 - (IBAction)_telephone:(id)sender {
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel:%@",[_detailItem objectForKey:@"telephone"]]];
     [[UIApplication sharedApplication] openURL:url];
     NSLog(@"telephone%hhd",[[UIApplication sharedApplication] openURL:url]);
 }
-//发邮件
+
+
+/**************
+     发邮件
+ **************/
+
 - (IBAction)sendEmail:(id)sender {
-//    第一种实现方法
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
     NSString *email = [_detailItem objectForKey:@"email"];
@@ -78,36 +86,14 @@
     [mc setToRecipients:[NSArray arrayWithObjects:email, nil]];
     [mc setSubject:@""];
     [self presentViewController:mc animated:YES completion:nil];
-    
-    
-//    for (UIView *view in [mc.view subviews])
-//    {
-//        NSLog(@"444444");
-//        if ([view isKindOfClass:[UINavigationBar class]])
-//        {
-//            NSLog(@"333333");
-//            UINavigationBar *naviBar = (UINavigationBar *)view;
-//            for (UIView *view in [naviBar subviews])
-//            {
-//                NSLog(@"22222");
-//                if ([view isKindOfClass:[UIButton class]])
-//                {
-//                    NSLog(@"11111");
-//                    UIButton *btn = (UIButton *)view;
-//                    [btn setBackgroundColor:[UIColor brownColor]];
-//                    [btn setBackgroundImage:nil forState:UIControlStateNormal];
-//                    [btn setBackgroundImage:nil forState:UIControlStateDisabled];
-//                }
-//            }
-//        }
-//    }
-//    第二种
-//    NSString *tittle = [_detailItem objectForKey:@"email"];
-//    NSString *stringURL = [NSString stringWithFormat:@"mailto://%@",tittle];
-//    NSURL *url = [NSURL URLWithString:stringURL];
-//    [[UIApplication sharedApplication] openURL:url];
+
 }
-//谷歌地图查看位置
+
+
+/**************
+ 谷歌地图查看位置
+ **************/
+
 - (IBAction)address:(id)sender {
     NSString *tittle = [_detailItem objectForKey:@"address"];
     NSString *stringURL = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%@",tittle];
@@ -138,7 +124,10 @@
     }
 }
 
-//生成二维码
+/**************
+   生成二维码
+ **************/
+
 - (IBAction)button:(id)sender {
     NSError *error;
     NSString *string = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:_detailItem options:NSJSONWritingPrettyPrinted error:&error ] encoding:NSUTF8StringEncoding];
@@ -186,7 +175,9 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-//保存二维码到本地
+/**************
+ 保存二维码到本地
+ **************/
 void UIImageWriteToSavedPhotosAlbum (
                                      UIImage  *image,
                                      id       completionTarget,
@@ -209,9 +200,11 @@ void UIImageWriteToSavedPhotosAlbum (
     UIImageWriteToSavedPhotosAlbum(imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
 
+/***********
+    邮件代理
+ ************/
 
 
-//邮件代理
 -  (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
     
