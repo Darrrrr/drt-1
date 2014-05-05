@@ -143,7 +143,9 @@
     NSError *error;
     NSString *string = [[NSString alloc] initWithData:[NSJSONSerialization dataWithJSONObject:_detailItem options:NSJSONWritingPrettyPrinted error:&error ] encoding:NSUTF8StringEncoding];
     imageView.image = [QRCodeGenerator qrImageForString:string imageSize:imageView.bounds.size.width];
-    
+    NSString *name = [_detailItem  objectForKey:@"name"];
+    UIImage *savedImage = [UIImage imageNamed:name];
+    [self saveImageToPhotos:savedImage];
 }
 
 - (void)displaySMSComposerSheet {
@@ -183,5 +185,29 @@
     }
     [self dismissModalViewControllerAnimated:YES];
 }
+
+//保存二维码到本地
+void UIImageWriteToSavedPhotosAlbum (
+                                     UIImage  *image,
+                                     id       completionTarget,
+                                     SEL      completionSelector,
+                                     void     *contextInfo
+                                     );
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
+{
+    NSString *msg = nil ;
+    if(error != NULL){
+        msg = @"保存图片失败" ;
+    }else{
+        msg = @"保存图片成功" ;
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"保存图片结果提示" message:msg delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [alert show];
+}
+- (void)saveImageToPhotos:(UIImage*)savedImage
+{
+    UIImageWriteToSavedPhotosAlbum(imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+}
+
 
 @end
