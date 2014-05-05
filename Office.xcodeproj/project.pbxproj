@@ -31,6 +31,15 @@
 		246C8E11191083AF007A49F8 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 246C8E10191083AF007A49F8 /* Contact.m */; };
 		246C8E16191083F0007A49F8 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246C8E13191083F0007A49F8 /* ContactViewController.m */; };
 		246C8E17191083F0007A49F8 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 246C8E15191083F0007A49F8 /* ContactDetailViewController.m */; };
+		247F21F419173709000DB2AB /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F21F219173709000DB2AB /* pinyin.c */; };
+		247F2208191753AA000DB2AB /* QRCodeGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 247F21F9191753AA000DB2AB /* QRCodeGenerator.m */; };
+		247F2209191753AA000DB2AB /* bitstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F21FA191753AA000DB2AB /* bitstream.c */; };
+		247F220A191753AA000DB2AB /* mask.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F21FC191753AA000DB2AB /* mask.c */; };
+		247F220B191753AA000DB2AB /* qrencode.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F21FE191753AA000DB2AB /* qrencode.c */; };
+		247F220C191753AA000DB2AB /* qrinput.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F2200191753AA000DB2AB /* qrinput.c */; };
+		247F220D191753AA000DB2AB /* qrspec.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F2202191753AA000DB2AB /* qrspec.c */; };
+		247F220E191753AA000DB2AB /* rscode.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F2204191753AA000DB2AB /* rscode.c */; };
+		247F220F191753AA000DB2AB /* split.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F2206191753AA000DB2AB /* split.c */; };
 		24D721A8190A00CF00A229AA /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721A7190A00CF00A229AA /* DBManager.m */; };
 		24D721AB190A010F00A229AA /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721AA190A010F00A229AA /* UserManager.m */; };
 		24D721B1190A20E600A229AA /* Predo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721B0190A20E600A229AA /* Predo.m */; };
@@ -106,6 +115,24 @@
 		246C8E13191083F0007A49F8 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
 		246C8E14191083F0007A49F8 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailViewController.h; sourceTree = "<group>"; };
 		246C8E15191083F0007A49F8 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailViewController.m; sourceTree = "<group>"; };
+		247F21F219173709000DB2AB /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		247F21F319173709000DB2AB /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		247F21F8191753AA000DB2AB /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
+		247F21F9191753AA000DB2AB /* QRCodeGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeGenerator.m; sourceTree = "<group>"; };
+		247F21FA191753AA000DB2AB /* bitstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bitstream.c; sourceTree = "<group>"; };
+		247F21FB191753AA000DB2AB /* bitstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitstream.h; sourceTree = "<group>"; };
+		247F21FC191753AA000DB2AB /* mask.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mask.c; sourceTree = "<group>"; };
+		247F21FD191753AA000DB2AB /* mask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mask.h; sourceTree = "<group>"; };
+		247F21FE191753AA000DB2AB /* qrencode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrencode.c; sourceTree = "<group>"; };
+		247F21FF191753AA000DB2AB /* qrencode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrencode.h; sourceTree = "<group>"; };
+		247F2200191753AA000DB2AB /* qrinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrinput.c; sourceTree = "<group>"; };
+		247F2201191753AA000DB2AB /* qrinput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrinput.h; sourceTree = "<group>"; };
+		247F2202191753AA000DB2AB /* qrspec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = qrspec.c; sourceTree = "<group>"; };
+		247F2203191753AA000DB2AB /* qrspec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = qrspec.h; sourceTree = "<group>"; };
+		247F2204191753AA000DB2AB /* rscode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rscode.c; sourceTree = "<group>"; };
+		247F2205191753AA000DB2AB /* rscode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rscode.h; sourceTree = "<group>"; };
+		247F2206191753AA000DB2AB /* split.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = split.c; sourceTree = "<group>"; };
+		247F2207191753AA000DB2AB /* split.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = split.h; sourceTree = "<group>"; };
 		24D721A5190A00CF00A229AA /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		24D721A6190A00CF00A229AA /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
 		24D721A7190A00CF00A229AA /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
@@ -214,6 +241,8 @@
 		242DFA7E1904F4B30067B111 /* Office */ = {
 			isa = PBXGroup;
 			children = (
+				247F21F719175394000DB2AB /* libqrencode */,
+				247F21F1191736E6000DB2AB /* PinYinConfig */,
 				246C8E0E1910836D007A49F8 /* Contact */,
 				246C8E0D19108362007A49F8 /* Message */,
 				246C8E091910833E007A49F8 /* Predo */,
@@ -275,6 +304,39 @@
 				246C8E15191083F0007A49F8 /* ContactDetailViewController.m */,
 			);
 			name = Contact;
+			sourceTree = "<group>";
+		};
+		247F21F1191736E6000DB2AB /* PinYinConfig */ = {
+			isa = PBXGroup;
+			children = (
+				247F21F219173709000DB2AB /* pinyin.c */,
+				247F21F319173709000DB2AB /* pinyin.h */,
+			);
+			name = PinYinConfig;
+			sourceTree = "<group>";
+		};
+		247F21F719175394000DB2AB /* libqrencode */ = {
+			isa = PBXGroup;
+			children = (
+				247F21F8191753AA000DB2AB /* QRCodeGenerator.h */,
+				247F21F9191753AA000DB2AB /* QRCodeGenerator.m */,
+				247F21FA191753AA000DB2AB /* bitstream.c */,
+				247F21FB191753AA000DB2AB /* bitstream.h */,
+				247F21FC191753AA000DB2AB /* mask.c */,
+				247F21FD191753AA000DB2AB /* mask.h */,
+				247F21FE191753AA000DB2AB /* qrencode.c */,
+				247F21FF191753AA000DB2AB /* qrencode.h */,
+				247F2200191753AA000DB2AB /* qrinput.c */,
+				247F2201191753AA000DB2AB /* qrinput.h */,
+				247F2202191753AA000DB2AB /* qrspec.c */,
+				247F2203191753AA000DB2AB /* qrspec.h */,
+				247F2204191753AA000DB2AB /* rscode.c */,
+				247F2205191753AA000DB2AB /* rscode.h */,
+				247F2206191753AA000DB2AB /* split.c */,
+				247F2207191753AA000DB2AB /* split.h */,
+			);
+			name = libqrencode;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		24D721A4190A00B400A229AA /* DB */ = {
@@ -366,6 +428,13 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "东华创元";
 				TargetAttributes = {
+					242DFA741904F4B30067B111 = {
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 					242DFA951904F4B30067B111 = {
 						TestTargetID = 242DFA741904F4B30067B111;
 					};
@@ -431,21 +500,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				247F21F419173709000DB2AB /* pinyin.c in Sources */,
+				247F220D191753AA000DB2AB /* qrspec.c in Sources */,
 				24D721B1190A20E600A229AA /* Predo.m in Sources */,
 				246C8E11191083AF007A49F8 /* Contact.m in Sources */,
+				247F220A191753AA000DB2AB /* mask.c in Sources */,
 				242DFA891904F4B30067B111 /* OfficeAppDelegate.m in Sources */,
 				242DFA851904F4B30067B111 /* main.m in Sources */,
 				24D721AB190A010F00A229AA /* UserManager.m in Sources */,
+				247F220B191753AA000DB2AB /* qrencode.c in Sources */,
 				2409D7D61909F7020063BD61 /* FMDatabase.m in Sources */,
 				24D721A8190A00CF00A229AA /* DBManager.m in Sources */,
 				243F2E5B190F4A5A006AC293 /* MessageViewController.m in Sources */,
+				247F2208191753AA000DB2AB /* QRCodeGenerator.m in Sources */,
 				243F2E5E190F4AE8006AC293 /* Message.m in Sources */,
 				2409D7DA1909F7020063BD61 /* FMResultSet.m in Sources */,
 				242DFA8F1904F4B30067B111 /* OfficeViewController.m in Sources */,
+				247F220C191753AA000DB2AB /* qrinput.c in Sources */,
+				247F220E191753AA000DB2AB /* rscode.c in Sources */,
 				B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */,
 				2409D7D81909F7020063BD61 /* FMDatabasePool.m in Sources */,
 				246C8E16191083F0007A49F8 /* ContactViewController.m in Sources */,
+				247F2209191753AA000DB2AB /* bitstream.c in Sources */,
 				2409D7D71909F7020063BD61 /* FMDatabaseAdditions.m in Sources */,
+				247F220F191753AA000DB2AB /* split.c in Sources */,
 				243F2E61190F57E7006AC293 /* MsgDetailViewController.m in Sources */,
 				246C8E17191083F0007A49F8 /* ContactDetailViewController.m in Sources */,
 				B83B010C1916345C00F7365F /* MessageAlertView.m in Sources */,
