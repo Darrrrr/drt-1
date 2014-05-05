@@ -72,7 +72,7 @@
 - (IBAction)sendEmail:(id)sender {
 //    第一种实现方法
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-//    mc.mailComposeDelegate = self;
+    mc.mailComposeDelegate = self;
     NSString *email = [_detailItem objectForKey:@"email"];
     NSLog(@"%@",email);
     [mc setToRecipients:[NSArray arrayWithObjects:email, nil]];
@@ -80,27 +80,27 @@
     [self presentViewController:mc animated:YES completion:nil];
     
     
-    for (UIView *view in [mc.view subviews])
-    {
-        NSLog(@"444444");
-        if ([view isKindOfClass:[UINavigationBar class]])
-        {
-            NSLog(@"333333");
-            UINavigationBar *naviBar = (UINavigationBar *)view;
-            for (UIView *view in [naviBar subviews])
-            {
-                NSLog(@"22222");
-                if ([view isKindOfClass:[UIButton class]])
-                {
-                    NSLog(@"11111");
-                    UIButton *btn = (UIButton *)view;
-                    [btn setBackgroundColor:[UIColor brownColor]];
-                    [btn setBackgroundImage:nil forState:UIControlStateNormal];
-                    [btn setBackgroundImage:nil forState:UIControlStateDisabled];
-                }
-            }
-        }
-    }
+//    for (UIView *view in [mc.view subviews])
+//    {
+//        NSLog(@"444444");
+//        if ([view isKindOfClass:[UINavigationBar class]])
+//        {
+//            NSLog(@"333333");
+//            UINavigationBar *naviBar = (UINavigationBar *)view;
+//            for (UIView *view in [naviBar subviews])
+//            {
+//                NSLog(@"22222");
+//                if ([view isKindOfClass:[UIButton class]])
+//                {
+//                    NSLog(@"11111");
+//                    UIButton *btn = (UIButton *)view;
+//                    [btn setBackgroundColor:[UIColor brownColor]];
+//                    [btn setBackgroundImage:nil forState:UIControlStateNormal];
+//                    [btn setBackgroundImage:nil forState:UIControlStateDisabled];
+//                }
+//            }
+//        }
+//    }
 //    第二种
 //    NSString *tittle = [_detailItem objectForKey:@"email"];
 //    NSString *stringURL = [NSString stringWithFormat:@"mailto://%@",tittle];
@@ -209,5 +209,41 @@ void UIImageWriteToSavedPhotosAlbum (
     UIImageWriteToSavedPhotosAlbum(imageView.image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
 
+
+
+//邮件代理
+-  (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Send e-mail Cancel" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+            break;
+        case MFMailComposeResultSaved:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"E-mail have been saved" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+            break;
+        case MFMailComposeResultSent:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"E-mail have been sended" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+            break;
+        default:
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"E-mail Not Sent" message:@"" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+            break;
+    }
+    //邮件视图消失
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 @end
