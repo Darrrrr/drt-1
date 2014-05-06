@@ -61,6 +61,8 @@ CGFloat buttonSpacerHeight = 0;
     dialogView.layer.shouldRasterize = YES;
     dialogView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
+   
+    
     self.layer.shouldRasterize = YES;
     self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     
@@ -70,7 +72,7 @@ CGFloat buttonSpacerHeight = 0;
     }
 #endif
     
-    dialogView.layer.opacity = 0.5f;
+    dialogView.layer.opacity = 0.1f;
     dialogView.layer.transform = CATransform3DMakeScale(1.3f, 1.3f, 1.0);
     
     self.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
@@ -84,26 +86,12 @@ CGFloat buttonSpacerHeight = 0;
         
         // Attached to the top most window (make sure we are using the right orientation):
     } else {
-        UIInterfaceOrientation interfaceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
-        
-        switch (interfaceOrientation) {
-            case UIInterfaceOrientationLandscapeLeft:
-                self.transform = CGAffineTransformMakeRotation(M_PI * 270.0 / 180.0);
-                break;
-                
-            case UIInterfaceOrientationLandscapeRight:
-                self.transform = CGAffineTransformMakeRotation(M_PI * 90.0 / 180.0);
-                break;
-                
-            case UIInterfaceOrientationPortraitUpsideDown:
-                self.transform = CGAffineTransformMakeRotation(M_PI * 180.0 / 180.0);
-                break;
-                
-            default:
-                break;
-        }
         
         [self setFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        
+
+       
+        
         [[[[UIApplication sharedApplication] windows] lastObject] addSubview:self];
     }
     //背景
@@ -142,6 +130,7 @@ CGFloat buttonSpacerHeight = 0;
     user.returnKeyType = UIReturnKeyDefault;
     user.tag=11;
     user.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    user.keyboardType =UIKeyboardAppearanceAlert;
     
 
     
@@ -179,7 +168,7 @@ CGFloat buttonSpacerHeight = 0;
     
     messageLabel.autocapitalizationType = UITextAutocapitalizationTypeNone;
     
-    
+     messageLabel.keyboardType =UIKeyboardAppearanceAlert;
     
     
     
@@ -333,17 +322,12 @@ CGFloat buttonSpacerHeight = 0;
         [closeButton.layer setCornerRadius:1];
         
         [container addSubview:closeButton];
+        
     }
 }
 
 
-+ (void) dismissKeyBoard{
-    
-    NSLog(@"ssssssssshhhhhhhhhh");
-    
-    
-    
-}
+
 
 #pragma mark - UITextView Delegate Methods
 
@@ -368,6 +352,8 @@ CGFloat buttonSpacerHeight = 0;
 
 + (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
+
+    
     textView.text=@"";
     textView.textColor = [UIColor blackColor];
     return YES;

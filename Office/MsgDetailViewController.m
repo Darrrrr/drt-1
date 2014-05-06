@@ -10,9 +10,11 @@
 #import "MessageAlertView.h"
 #import "Message.h"
 #import "UserManager.h"
-
+#import "BDKNotifyHUD.h"
 @interface MsgDetailViewController ()
 - (void)configureView;
+
+@property (strong, nonatomic) BDKNotifyHUD *notify;
 @end
 
 @implementation MsgDetailViewController
@@ -58,6 +60,7 @@
     
     
     
+    
 }
 
 - (void)MessagedialogButtonTouchUpInside: (MessageAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
@@ -81,19 +84,29 @@
             
             // 添加的测试
             
+            if([message.text isEqualToString:@"请输入内容..."]){
+                message.text = @"";
+            }
+            
             [Message addMessage:id withMessage:message.text];
             
             [alertView close];
             
         }else{
+           
+            _notify = [BDKNotifyHUD notifyHUDWithImage:[UIImage imageNamed:@"Checkmark.png"] text:@" 未找到该用户！"];
+            _notify.center = CGPointMake(self.view.center.x, self.view.center.y - 20);
             
-            UIAlertView *ad;
-            ad = [[UIAlertView alloc]initWithTitle:@"提示" message:@"未找到该用户,请检查您的输入" delegate:self cancelButtonTitle: @"确定"
-                                 otherButtonTitles:nil, nil];
-            ad.alertViewStyle = UIAlertViewStyleDefault;
-            [ad show];
+            if (self.notify.isAnimating) return;
             
+            [alertView addSubview:self.notify];
+            [self.notify presentWithDuration:1.0f speed:0.5f inView:self.view completion:^{
+                [self.notify removeFromSuperview];
+            }];
             
+
+            
+                      
         }
         
         

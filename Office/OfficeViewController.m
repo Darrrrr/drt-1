@@ -6,8 +6,10 @@
 //  Copyright (c) 2014年 东华创元. All rights reserved.
 //
 #import "OfficeViewController.h"
-
+#import "BDKNotifyHUD.h"
 @interface OfficeViewController ()
+
+@property (strong, nonatomic) BDKNotifyHUD *notify;
 
 @end
 
@@ -80,11 +82,18 @@
         password.text = @"";
         NSLog(@"登陆失败");
         
-        UIAlertView *ad;
-        ad = [[UIAlertView alloc]initWithTitle:@"提示" message:@"错误的用户名或密码" delegate:self cancelButtonTitle: @"确定"
-                             otherButtonTitles:nil, nil];
-        ad.alertViewStyle = UIAlertViewStyleDefault;
-        [ad show];
+        
+        _notify = [BDKNotifyHUD notifyHUDWithImage:[UIImage imageNamed:@"Checkmark.png"] text:@"  用户名或密码错误  "];
+        _notify.center = CGPointMake(self.view.center.x, self.view.center.y - 20);
+        
+        if (self.notify.isAnimating) return;
+        
+        [self.view addSubview:self.notify];
+        [self.notify presentWithDuration:1.0f speed:0.5f inView:self.view completion:^{
+            [self.notify removeFromSuperview];
+        }];
+        
+
     }
     
 }

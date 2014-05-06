@@ -45,6 +45,9 @@
 		24D721B1190A20E600A229AA /* Predo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721B0190A20E600A229AA /* Predo.m */; };
 		B808A925190F3774000554D2 /* predoList.png in Resources */ = {isa = PBXBuildFile; fileRef = B808A924190F3774000554D2 /* predoList.png */; };
 		B816C49719186CBD003895DA /* msgbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B816C49619186CBD003895DA /* msgbg.png */; };
+		B816C49B1918C7A0003895DA /* BDKNotifyHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B816C49A1918C7A0003895DA /* BDKNotifyHUD.m */; };
+		B816C49E1918C7B9003895DA /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = B816C49C1918C7B9003895DA /* Checkmark.png */; };
+		B816C49F1918C7B9003895DA /* Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B816C49D1918C7B9003895DA /* Checkmark@2x.png */; };
 		B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A61190E422600E105F5 /* PretodoViewController.m */; };
 		B8221A65190E46BD00E105F5 /* PreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A64190E46BD00E105F5 /* PreDetailViewController.m */; };
 		B829CD611910972D00028BA7 /* textbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD601910972D00028BA7 /* textbg.png */; };
@@ -143,6 +146,10 @@
 		24D721B0190A20E600A229AA /* Predo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Predo.m; sourceTree = "<group>"; };
 		B808A924190F3774000554D2 /* predoList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = predoList.png; sourceTree = "<group>"; };
 		B816C49619186CBD003895DA /* msgbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgbg.png; sourceTree = "<group>"; };
+		B816C4991918C7A0003895DA /* BDKNotifyHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDKNotifyHUD.h; sourceTree = "<group>"; };
+		B816C49A1918C7A0003895DA /* BDKNotifyHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDKNotifyHUD.m; sourceTree = "<group>"; };
+		B816C49C1918C7B9003895DA /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
+		B816C49D1918C7B9003895DA /* Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Checkmark@2x.png"; sourceTree = "<group>"; };
 		B8221A60190E422600E105F5 /* PretodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PretodoViewController.h; sourceTree = "<group>"; };
 		B8221A61190E422600E105F5 /* PretodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PretodoViewController.m; sourceTree = "<group>"; };
 		B8221A63190E46BD00E105F5 /* PreDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreDetailViewController.h; sourceTree = "<group>"; };
@@ -243,6 +250,7 @@
 		242DFA7E1904F4B30067B111 /* Office */ = {
 			isa = PBXGroup;
 			children = (
+				B816C4981918C787003895DA /* Tool */,
 				247F21F719175394000DB2AB /* libqrencode */,
 				247F21F1191736E6000DB2AB /* PinYinConfig */,
 				246C8E0E1910836D007A49F8 /* Contact */,
@@ -359,10 +367,22 @@
 			name = DB;
 			sourceTree = "<group>";
 		};
+		B816C4981918C787003895DA /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				B816C4991918C7A0003895DA /* BDKNotifyHUD.h */,
+				B816C49A1918C7A0003895DA /* BDKNotifyHUD.m */,
+			);
+			name = Tool;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		B8B1A4701909E85000697710 /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				B808A924190F3774000554D2 /* predoList.png */,
+				B816C49C1918C7B9003895DA /* Checkmark.png */,
+				B816C49D1918C7B9003895DA /* Checkmark@2x.png */,
 				B816C49619186CBD003895DA /* msgbg.png */,
 				B829CD681910FCEE00028BA7 /* fgx.png */,
 				B829CD621910DC9D00028BA7 /* ditu.png */,
@@ -476,12 +496,14 @@
 				242DFA911904F4B30067B111 /* Images.xcassets in Resources */,
 				242DFA831904F4B30067B111 /* InfoPlist.strings in Resources */,
 				B829CD651910DC9D00028BA7 /* ditu.png in Resources */,
+				B816C49E1918C7B9003895DA /* Checkmark.png in Resources */,
 				B8A03BDA190FA7E5004FBB3A /* lxrtx.png in Resources */,
 				B8644B421907871C00238B15 /* bwl.png in Resources */,
 				B829CD661910DC9D00028BA7 /* youjian.png in Resources */,
 				B816C49719186CBD003895DA /* msgbg.png in Resources */,
 				B829CD671910DC9D00028BA7 /* xinxi.png in Resources */,
 				B8644B47190788E400238B15 /* dbsx.png in Resources */,
+				B816C49F1918C7B9003895DA /* Checkmark@2x.png in Resources */,
 				B829CD611910972D00028BA7 /* textbg.png in Resources */,
 				B829CD691910FCEE00028BA7 /* fgx.png in Resources */,
 				242DFA8C1904F4B30067B111 /* Main.storyboard in Resources */,
@@ -520,6 +542,7 @@
 				243F2E5E190F4AE8006AC293 /* Message.m in Sources */,
 				2409D7DA1909F7020063BD61 /* FMResultSet.m in Sources */,
 				242DFA8F1904F4B30067B111 /* OfficeViewController.m in Sources */,
+				B816C49B1918C7A0003895DA /* BDKNotifyHUD.m in Sources */,
 				247F220C191753AA000DB2AB /* qrinput.c in Sources */,
 				247F220E191753AA000DB2AB /* rscode.c in Sources */,
 				B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */,

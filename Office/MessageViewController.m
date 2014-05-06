@@ -11,6 +11,7 @@
 #import "MsgDetailViewController.h"
 #import "MessageAlertView.h"
 #import "UserManager.h"
+#import "BDKNotifyHUD.h"
 #define messageFromTag 1
 #define messageDateTag 2
 #define messageContentTag 3
@@ -18,6 +19,8 @@
 #define messageidTag 5
 
 @interface MessageViewController ()
+
+@property (strong, nonatomic) BDKNotifyHUD *notify;
 
 @end
 
@@ -109,13 +112,16 @@
     UILabel *_messageDate = (UILabel *)[cell.contentView viewWithTag:messageDateTag];
     UILabel *_messageContent = (UILabel *)[cell.contentView viewWithTag:messageContentTag];
     UILabel *_messageId = (UILabel *)[cell.contentView viewWithTag:messageidTag];
-   // UILabel *_messageState = (UILabel *)[cell.contentView viewWithTag:messageStateTag];
    
+    
+    //消息状态的显示
+    // UILabel *_messageState = (UILabel *)[cell.contentView viewWithTag:messageStateTag];
+    
     [_messageFrom setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagefrom"]]];
     [_messageDate setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagedate"]]];
     [_messageContent setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagecontent"]]];
-    //[_messageState setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"messagestate"]]];
-     [_messageId setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messageid"]]];
+    //[_messageState setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagestate"]]];
+    [_messageId setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messageid"]]];
     
     return cell;
 }
@@ -148,6 +154,8 @@
     [alertView setButtonColors:[NSMutableArray arrayWithObjects:[UIColor colorWithRed:255.0f/255.0f green:77.0f/255.0f blue:94.0f/255.0f alpha:1.0f],[UIColor colorWithRed:0.0f green:0.5f blue:1.0f alpha:1.0f],nil]];
     [alertView setDelegate:(id<MessageAlertViewDelegate>)self];
     
+    [alertView.dialogView bringSubviewToFront:alertView.containerView];
+
     [alertView show];
     
     
@@ -184,18 +192,27 @@
             
             // 添加的测试
             
+            if([message.text isEqualToString:@"请输入内容..."]){
+                message.text = @"";
+            }
+            
             [Message addMessage:id withMessage:message.text];
             
             [alertView close];
             
         }else{
             
-            UIAlertView *ad;
-            ad = [[UIAlertView alloc]initWithTitle:@"提示" message:@"未找到该用户,请检查您的输入" delegate:self cancelButtonTitle: @"确定"
-                                 otherButtonTitles:nil, nil];
-            ad.alertViewStyle = UIAlertViewStyleDefault;
-            [ad show];
             
+            _notify = [BDKNotifyHUD notifyHUDWithImage:[UIImage imageNamed:@"Checkmark.png"] text:@" 未找到该用户！"];
+            _notify.center = CGPointMake(self.view.center.x, self.view.center.y - 20);
+            
+            if (self.notify.isAnimating) return;
+            
+            [alertView addSubview:self.notify];
+            [self.notify presentWithDuration:1.0f speed:0.5f inView:self.view completion:^{
+                [self.notify removeFromSuperview];
+            }];
+
             
         }
         

@@ -66,9 +66,8 @@
             NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
             NSString * msgfrom = [local objectForKey:@"UserName"];
 
-            
-            
-            
+
+
             NSString *sql = [NSString stringWithFormat:@"insert into message(user_id,messagecontent,messagefrom,messagedate,state) values (\"%d\",\"%@\",\"%@\",\"%@\",\"未完成\")",toPerson, message,msgfrom,date];
             [db executeUpdate:sql];
             NSLog(@"chage status。。。。。。。。。。。。。1");
