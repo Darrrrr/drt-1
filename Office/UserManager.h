@@ -12,5 +12,5 @@
 
 @property (nonatomic, copy) NSString *userID;//用户的ID
 - (int)checkUsername:(NSString *)username andcheckPassword:(NSString *)password;
-
++ (int)checkUserExist:(NSString *)username;
 @end

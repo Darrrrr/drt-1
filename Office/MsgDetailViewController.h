@@ -16,6 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *detailTime;
 @property (weak, nonatomic) IBOutlet UITextView *detailmsgcount;
 
-
+- (IBAction)reply:(id)sender;
 
 @end

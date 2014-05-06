@@ -30,5 +30,25 @@
     return isFind;
     
 }
++ (int)checkUserExist:(NSString *)username{
+    
+    FMDatabase *dataBase = [DBManager createDataBase];
+    int isFind = -1;
+    if ([dataBase open]) {
+        
+        NSString *sql = [NSString stringWithFormat:@"select * from user where username=\"%@\" ",username];
+        NSLog(@"---------%@",sql);
+        FMResultSet *rs = [dataBase executeQuery:sql];
+        NSLog(@"%@",rs);
+        
+        if ([rs next]) {
+            
+            isFind = [rs intForColumn:@"id"];
+        }
+        [dataBase close];
+    }
+    return isFind;
+    
+}
 
 @end

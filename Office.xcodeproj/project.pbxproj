@@ -44,6 +44,7 @@
 		24D721AB190A010F00A229AA /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721AA190A010F00A229AA /* UserManager.m */; };
 		24D721B1190A20E600A229AA /* Predo.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D721B0190A20E600A229AA /* Predo.m */; };
 		B808A925190F3774000554D2 /* predoList.png in Resources */ = {isa = PBXBuildFile; fileRef = B808A924190F3774000554D2 /* predoList.png */; };
+		B816C49719186CBD003895DA /* msgbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B816C49619186CBD003895DA /* msgbg.png */; };
 		B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A61190E422600E105F5 /* PretodoViewController.m */; };
 		B8221A65190E46BD00E105F5 /* PreDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8221A64190E46BD00E105F5 /* PreDetailViewController.m */; };
 		B829CD611910972D00028BA7 /* textbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD601910972D00028BA7 /* textbg.png */; };
@@ -141,6 +142,7 @@
 		24D721AF190A20E600A229AA /* Predo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Predo.h; sourceTree = "<group>"; };
 		24D721B0190A20E600A229AA /* Predo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Predo.m; sourceTree = "<group>"; };
 		B808A924190F3774000554D2 /* predoList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = predoList.png; sourceTree = "<group>"; };
+		B816C49619186CBD003895DA /* msgbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgbg.png; sourceTree = "<group>"; };
 		B8221A60190E422600E105F5 /* PretodoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PretodoViewController.h; sourceTree = "<group>"; };
 		B8221A61190E422600E105F5 /* PretodoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PretodoViewController.m; sourceTree = "<group>"; };
 		B8221A63190E46BD00E105F5 /* PreDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreDetailViewController.h; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				B808A924190F3774000554D2 /* predoList.png */,
+				B816C49619186CBD003895DA /* msgbg.png */,
 				B829CD681910FCEE00028BA7 /* fgx.png */,
 				B829CD621910DC9D00028BA7 /* ditu.png */,
 				B829CD631910DC9D00028BA7 /* youjian.png */,
@@ -476,6 +479,7 @@
 				B8A03BDA190FA7E5004FBB3A /* lxrtx.png in Resources */,
 				B8644B421907871C00238B15 /* bwl.png in Resources */,
 				B829CD661910DC9D00028BA7 /* youjian.png in Resources */,
+				B816C49719186CBD003895DA /* msgbg.png in Resources */,
 				B829CD671910DC9D00028BA7 /* xinxi.png in Resources */,
 				B8644B47190788E400238B15 /* dbsx.png in Resources */,
 				B829CD611910972D00028BA7 /* textbg.png in Resources */,

@@ -48,20 +48,34 @@
 
 }
 
-+ (void)addMessage:(int)toPerson{
-
++ (void)addMessage:(int)toPerson withMessage:(NSString *)message{
+    
     FMDatabaseQueue *queue = [DBManager queue];
     [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         if ([db open])
         {
             //给指定的人添加MESSAGE
-            NSString *sql = [NSString stringWithFormat:@"insert into message(user_id,messagecontent,messagefrom,messagedate,state) values (\"1\",\"学习iOS——segue/n学习了大量关于页面跳转的问题学会了很多很多知识，如这个跳转那个跳转\",\"msgfrom:123\",\"2014.2.22\",\"未完成\")"];
+            //获取系统时间
+            
+            NSString* date;
+            NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
+            [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+            date = [formatter stringFromDate:[NSDate date]];
+            
+            //获取发件人姓名
+            NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
+            NSString * msgfrom = [local objectForKey:@"UserName"];
+
+            
+            
+            
+            NSString *sql = [NSString stringWithFormat:@"insert into message(user_id,messagecontent,messagefrom,messagedate,state) values (\"%d\",\"%@\",\"%@\",\"%@\",\"未完成\")",toPerson, message,msgfrom,date];
             [db executeUpdate:sql];
             NSLog(@"chage status。。。。。。。。。。。。。1");
             
         }
     }];
-
+    
 }
 
 @end

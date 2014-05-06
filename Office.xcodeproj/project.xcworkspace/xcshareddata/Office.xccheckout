@@ -5,45 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>B32D9196-4B75-4962-AE13-269BFEB32528</string>
+	<string>FAC86DEB-7714-43B8-9F9E-7AE9F9FE2D2F</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Office</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>53A56ABA-6AC1-40E4-8F98-FFB24E57B18C</key>
-		<string>https://github.com/sunchenhui/drt/trunk</string>
+		<key>7DB7326E-8D5B-4516-8D5D-3F56DF549A9A</key>
+		<string>https://github.com/sunchenhui/drt.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Office.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>53A56ABA-6AC1-40E4-8F98-FFB24E57B18C</key>
+		<key>7DB7326E-8D5B-4516-8D5D-3F56DF549A9A</key>
 		<string>../..</string>
 	</dict>
-	<key>IDESourceControlProjectRepositoryRootDictionary</key>
-	<dict>
-		<key>53A56ABA-6AC1-40E4-8F98-FFB24E57B18C</key>
-		<string>https://github.com/sunchenhui/drt</string>
-	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/sunchenhui/drt/trunk/Office.xcodeproj</string>
+	<string>https://github.com/sunchenhui/drt.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>53A56ABA-6AC1-40E4-8F98-FFB24E57B18C</string>
+	<string>7DB7326E-8D5B-4516-8D5D-3F56DF549A9A</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
-			<key>IDESourceControlRepositoryBranchesRelativeLocationKey</key>
-			<string>branches</string>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.subversion</string>
-			<key>IDESourceControlRepositoryTrunkRelativeLocationKey</key>
-			<string>trunk</string>
+			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>53A56ABA-6AC1-40E4-8F98-FFB24E57B18C</string>
+			<string>7DB7326E-8D5B-4516-8D5D-3F56DF549A9A</string>
 			<key>IDESourceControlWCCName</key>
-			<string>drt (5</string>
+			<string>drt</string>
 		</dict>
 	</array>
 </dict>

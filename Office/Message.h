@@ -13,6 +13,6 @@
 
 + (NSMutableArray *)findAllMessage:(int)userID;
 + (void)deleteMessage:(int)withRow;
-+ (void)addMessage:(int)toPerson;
++ (void)addMessage:(int)toPerson withMessage:(NSString *)message;
 
 @end

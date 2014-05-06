@@ -10,6 +10,7 @@
 #import "Message.h"
 #import "MsgDetailViewController.h"
 #import "MessageAlertView.h"
+#import "UserManager.h"
 #define messageFromTag 1
 #define messageDateTag 2
 #define messageContentTag 3
@@ -131,20 +132,79 @@
 
 
 - (IBAction)addMessage:(id)sender {
-
-    UIAlertView *alertView1 = [[UIAlertView alloc] initWithTitle:@"Enter Form Name" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
-    alertView1.alertViewStyle = UIAlertViewStyleSecureTextInput;
-    UITextField *myTextField = [alertView1 textFieldAtIndex:0];
-    [alertView1 setTag:555];
-    myTextField.keyboardType=UIKeyboardTypeAlphabet;
+    //系统自带的AlertView
+    //    UIAlertView *alertView1 = [[UIAlertView alloc] initWithTitle:@"Enter Form Name" message:@"" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    //    alertView1.alertViewStyle = UIAlertViewStyleSecureTextInput;
+    //    UITextField *myTextField = [alertView1 textFieldAtIndex:0];
+    //    [alertView1 setTag:555];
+    //    myTextField.keyboardType=UIKeyboardTypeAlphabet;
+    //
+    //    [alertView1 show];
     
-    [alertView1 show];
-
+    //自定义View
     
-    // 添加的测试
-    NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
-    NSLog(@"%@",[local objectForKey:@"userID"]);
-    [Message addMessage:[[local objectForKey:@"userID"] intValue]];
+    MessageAlertView *alertView = [MessageAlertView alertWithTitle:@"" message:@""];
+    [alertView setButtonTitles:[NSMutableArray arrayWithObjects: @"发送消息", @"关闭", nil]];
+    [alertView setButtonColors:[NSMutableArray arrayWithObjects:[UIColor colorWithRed:255.0f/255.0f green:77.0f/255.0f blue:94.0f/255.0f alpha:1.0f],[UIColor colorWithRed:0.0f green:0.5f blue:1.0f alpha:1.0f],nil]];
+    [alertView setDelegate:(id<MessageAlertViewDelegate>)self];
+    
+    [alertView show];
+    
+    
+    
+    
     
 }
+
+
+-(void) dismissKeyBoard{
+    
+    NSLog(@"ssssssssshhhhhhhhhh");
+    
+    
+}
+- (void)MessagedialogButtonTouchUpInside: (MessageAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+{
+    NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", buttonIndex, [alertView tag]);
+    
+    
+    
+    
+    if(buttonIndex == 0){
+        //获取输入框内容
+        UITextView *user =(UITextView *)[alertView viewWithTag:11];
+        NSLog(@"%@",user.text) ;
+        
+        UITextView *message =(UITextView *)[alertView viewWithTag:12];
+        NSLog(@"%@",message.text) ;
+        //查找用户是否存在
+        int id = [UserManager checkUserExist:user.text];
+        NSLog(@"%d",id);
+        if( id>0 ){
+            
+            // 添加的测试
+            
+            [Message addMessage:id withMessage:message.text];
+            
+            [alertView close];
+            
+        }else{
+            
+            UIAlertView *ad;
+            ad = [[UIAlertView alloc]initWithTitle:@"提示" message:@"未找到该用户,请检查您的输入" delegate:self cancelButtonTitle: @"确定"
+                                 otherButtonTitles:nil, nil];
+            ad.alertViewStyle = UIAlertViewStyleDefault;
+            [ad show];
+            
+            
+        }
+        
+        
+        
+    }
+    
+    else
+        [alertView close];
+}
+
 @end
