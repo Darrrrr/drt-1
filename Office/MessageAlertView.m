@@ -92,7 +92,7 @@ CGFloat buttonSpacerHeight = 0;
 
        
         
-        [[[[UIApplication sharedApplication] windows] lastObject] addSubview:self];
+        [[[UIApplication sharedApplication] keyWindow]addSubview:self];
     }
     //背景
     [UIView animateWithDuration:0.2f delay:0.0 options:UIViewAnimationOptionCurveEaseInOut
