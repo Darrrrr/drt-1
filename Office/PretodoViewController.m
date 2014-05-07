@@ -35,12 +35,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    //设置badge
+    //self.navigationController.tabBarItem.badgeValue = [Predo predoCount];
+    
     
     UIBarButtonItem *freshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(freshList:)];
     self.navigationItem.rightBarButtonItem = freshButton;
     
     NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
-    NSString *ID = [local objectForKey:@"userID"];
+    NSString *ID = [local objectForKey:@"UserID"];
     
     userID = [ID intValue] ;
    
@@ -109,7 +112,7 @@
     [_prestate setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predostate"]]];
     [_preid setText:[NSString stringWithFormat:@"%@",[predoDic objectForKey:@"predoid"]]];
     
-    
+    NSLog(@"初始化cell");
     
    
     return cell;
@@ -127,7 +130,9 @@
         //修改数据库
 
         [Predo upDateStatus:[[(UILabel *)[cell.contentView viewWithTag:preid] text] intValue]fromStatus:isButtonOn];
-        
+         //刷新badge
+         self.navigationController.tabBarItem.badgeValue = [Predo predoCount];
+
     }else {
         
                
@@ -135,7 +140,9 @@
         //修改数据库
 
         [Predo upDateStatus:[[(UILabel *)[cell.contentView viewWithTag:preid] text] intValue] fromStatus:isButtonOn];
-        
+        //刷新badge
+        self.navigationController.tabBarItem.badgeValue = [Predo predoCount];
+
       
            }
     [self performSelector:@selector(reloadcell:) withObject:cell afterDelay:0.3f];

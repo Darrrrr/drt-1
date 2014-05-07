@@ -56,6 +56,7 @@
 		B829CD671910DC9D00028BA7 /* xinxi.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD641910DC9D00028BA7 /* xinxi.png */; };
 		B829CD691910FCEE00028BA7 /* fgx.png in Resources */ = {isa = PBXBuildFile; fileRef = B829CD681910FCEE00028BA7 /* fgx.png */; };
 		B83B010C1916345C00F7365F /* MessageAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = B83B010B1916345C00F7365F /* MessageAlertView.m */; };
+		B83C0174191A13C6003564F0 /* tabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B83C0173191A13C6003564F0 /* tabbarController.m */; };
 		B8644B3E1907871C00238B15 /* xx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B381907871C00238B15 /* xx@2x.png */; };
 		B8644B3F1907871C00238B15 /* bwl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B391907871C00238B15 /* bwl@2x.png */; };
 		B8644B401907871C00238B15 /* lxr@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B3A1907871C00238B15 /* lxr@2x.png */; };
@@ -161,6 +162,8 @@
 		B829CD681910FCEE00028BA7 /* fgx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fgx.png; sourceTree = "<group>"; };
 		B83B010A1916345C00F7365F /* MessageAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageAlertView.h; sourceTree = "<group>"; };
 		B83B010B1916345C00F7365F /* MessageAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageAlertView.m; sourceTree = "<group>"; };
+		B83C0172191A13C6003564F0 /* tabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tabbarController.h; sourceTree = "<group>"; };
+		B83C0173191A13C6003564F0 /* tabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tabbarController.m; sourceTree = "<group>"; };
 		B8644B381907871C00238B15 /* xx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "xx@2x.png"; sourceTree = "<group>"; };
 		B8644B391907871C00238B15 /* bwl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bwl@2x.png"; sourceTree = "<group>"; };
 		B8644B3A1907871C00238B15 /* lxr@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lxr@2x.png"; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 				24D721A4190A00B400A229AA /* DB */,
 				242DFA871904F4B30067B111 /* OfficeAppDelegate.h */,
 				242DFA881904F4B30067B111 /* OfficeAppDelegate.m */,
+				B83C0172191A13C6003564F0 /* tabbarController.h */,
+				B83C0173191A13C6003564F0 /* tabbarController.m */,
 				242DFA8A1904F4B30067B111 /* Main.storyboard */,
 				242DFA8D1904F4B30067B111 /* OfficeViewController.h */,
 				242DFA8E1904F4B30067B111 /* OfficeViewController.m */,
@@ -545,6 +550,7 @@
 				B816C49B1918C7A0003895DA /* BDKNotifyHUD.m in Sources */,
 				247F220C191753AA000DB2AB /* qrinput.c in Sources */,
 				247F220E191753AA000DB2AB /* rscode.c in Sources */,
+				B83C0174191A13C6003564F0 /* tabbarController.m in Sources */,
 				B8221A62190E422600E105F5 /* PretodoViewController.m in Sources */,
 				2409D7D81909F7020063BD61 /* FMDatabasePool.m in Sources */,
 				246C8E16191083F0007A49F8 /* ContactViewController.m in Sources */,

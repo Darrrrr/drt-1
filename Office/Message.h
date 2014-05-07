@@ -15,4 +15,9 @@
 + (void)deleteMessage:(int)withRow;
 + (void)addMessage:(int)toPerson withMessage:(NSString *)message;
 
+
++ (void)changeState:(int)withRow;
+
++ (NSString *)messageCount;
+
 @end

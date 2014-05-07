@@ -46,7 +46,7 @@
     [settings removeObjectForKey:@"UserID"];
     [settings setObject:userName forKey:@"UserName"];
     [settings setObject:pwd forKey:@"Password"];
-    [settings setObject:userID forKey:@"userID"];
+    [settings setObject:userID forKey:@"UserID"];
     [settings synchronize];
 }
 

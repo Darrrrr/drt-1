@@ -28,7 +28,7 @@
     }];
     //NSLog(@"Predo.h____mutableArray___%@",mutableArray);
     NSMutableArray *resultArray = [mutableArray mutableCopy];
-    //NSLog(@"Predo.h____resultArray___%@",resultArray);
+    NSLog(@"MSG.h____resultArray___");
     return resultArray;
 }
 
@@ -75,6 +75,62 @@
         }
     }];
     
+}
+
++ (void)changeState:(int)withRow{
+    
+    FMDatabaseQueue *queue = [DBManager queue];
+    [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        if ([db open])
+        {
+            //@"update predo set state = \"完成\" where id = \"%d\" ",updateID]
+            NSString *sql = [NSString stringWithFormat:@"update message set state = \"完成\" where id = \"%d\" ",withRow];
+            [db executeUpdate:sql];
+            NSLog(@"chage status。。。。。。。。。。。。。change");
+            
+        }
+    }];
+    
+}
+
++ (NSString *)messageCount{
+
+    __block NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:0];
+    
+    FMDatabaseQueue *queue = [DBManager queue];
+    
+    [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        if ([db open])
+        {
+            
+            NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
+            NSString * userID = [local objectForKey:@"UserID"];
+            //这里为啥用\"%d\",userID就不行呢？ 网上说要转成NSObject的子类 但是下面的改状态这个方法就可以
+            FMResultSet *rs = [db executeQuery:@"select * from message where user_id = ? and state = \"未完成\" ",[NSNumber numberWithInt:[userID intValue]]];
+            
+            while ([rs next])
+            {
+                NSDictionary *dic = @{@"messagestate": [rs stringForColumn:@"state"]};
+                [mutableArray addObject:dic];
+                
+            }
+            
+            NSLog(@"%@",mutableArray);
+            
+        }
+    }];
+    
+    
+    NSString *final = [NSString stringWithFormat:@"%d",mutableArray.count];
+    
+    if ([final isEqualToString:@"0"]) {
+        final=nil;
+    }
+    return final;
+
+
+
+
 }
 
 @end

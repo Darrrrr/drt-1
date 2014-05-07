@@ -71,6 +71,45 @@
 
 }
 
++ (NSString *)predoCount{
+
+
+    __block NSMutableArray *mutableArray = [NSMutableArray arrayWithCapacity:0];
+    
+    FMDatabaseQueue *queue = [DBManager queue];
+    
+    [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+        if ([db open])
+        {
+            
+            NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
+            NSString * userID = [local objectForKey:@"UserID"];
+            //这里为啥用\"%d\",userID就不行呢？ 网上说要转成NSObject的子类 但是下面的改状态这个方法就可以
+            FMResultSet *rs = [db executeQuery:@"select * from predo where user_id = ? and state = \"未完成\" ",[NSNumber numberWithInt:[userID intValue]]];
+            NSLog(@"select * from predo where user_id = %@ state =\"未完成\" ",[NSNumber numberWithInt:[userID intValue]]);
+           
+            while ([rs next])
+            {
+                NSDictionary *dic = @{@"predostate": [rs stringForColumn:@"state"]};
+                [mutableArray addObject:dic];
+
+            }
+           
+            NSLog(@"%@",mutableArray);
+         
+        }
+    }];
+    
+    
+   NSString *final = [NSString stringWithFormat:@"%d",mutableArray.count];
+   
+    if ([final isEqualToString:@"0"]) {
+        final=nil;
+    }
+    return final;
+
+ 
+}
 
 //+(NSComparisonResult)compare:(NSDictionary *)otherDictionary
 //{

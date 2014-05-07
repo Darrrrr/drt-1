@@ -74,6 +74,7 @@ static FMDatabase *dataBase = nil;
             NSString *sql1 = @"create table user(id integer primary key,username text,password text)";
             NSString *sql1_1 = @"insert into user(id,username,password) values (\"1\",\"admin\",\"123456\")";
             NSString *sql1_2 = @"insert into user(id,username,password) values (\"2\",\"dhcc\",\"123456\")";
+            NSString *sql1_3 = @"insert into user(id,username,password) values (\"3\",\"s\",\"123456\")";
             NSString *sql2 = @"create table predo(id integer primary key autoincrement,user_id integer,predocontent text,predodate text,predodetail text,state text)";
             NSString *sql2_1 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"1\",\"1\",\"学习iOS——segue\",\"2014.2.22\",\"学习了大量关于页面跳转的问题学会了很多很多知识，如这个跳转那个跳转\",\"未完成\")";
             NSString *sql2_2 = @"insert into predo(id,user_id,predocontent,predodate,predodetail,state) values (\"2\",\"1\",\"学习iOS——ARC\",\"2014.2.23\",\"学习了大量关于ARC的问题学会了很多很多知识，如这个ARC那个ARC\",\"未完成\")";
@@ -100,7 +101,7 @@ static FMDatabase *dataBase = nil;
             }
             
             if ([DBManager isTableExist:@"user"]) {
-                if ([dataBase executeUpdate:sql1_1] && [dataBase executeUpdate:sql1_2]) {
+                if ([dataBase executeUpdate:sql1_1] && [dataBase executeUpdate:sql1_2]&& [dataBase executeUpdate:sql1_3]) {
                     NSLog(@"插入成功");
                 }
                 else

@@ -124,7 +124,7 @@ CGFloat buttonSpacerHeight = 0;
     }
     
    
-    user.font = [UIFont boldSystemFontOfSize:20.0f];
+    user.font = [UIFont systemFontOfSize:18.0f];
     user.textAlignment = NSTextAlignmentLeft;
     user.delegate = (id<UITextViewDelegate>)self;
     user.returnKeyType = UIReturnKeyDefault;

@@ -38,8 +38,12 @@
 {
     [super viewDidLoad];
     
+    
+    //设置badge
+   // self.navigationController.tabBarItem.badgeValue = [Message messageCount];
+    
     NSUserDefaults *local = [NSUserDefaults standardUserDefaults];
-    NSString *ID = [local objectForKey:@"userID"];
+    NSString *ID = [local objectForKey:@"UserID"];
     
     userID = [ID intValue] ;
     
@@ -75,6 +79,9 @@
         
          NSLog(@"af%@",array);
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+         self.navigationController.tabBarItem.badgeValue = [Message messageCount];
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
@@ -123,15 +130,44 @@
     //[_messageState setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagestate"]]];
     [_messageId setText:[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messageid"]]];
     
+    //test
+    if([[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagestate"]] isEqualToString:@"未完成"]){
+        cell.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        NSLog(@"取消高亮");
+    }
+    
+    NSLog(@"MESSAGE CELL");
+    
     return cell;
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    
     if ([[segue identifier] isEqualToString:@"showMsg"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDictionary *msgDic = [array objectAtIndex:[indexPath row]];
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    NSDictionary *msgDic = [array objectAtIndex:[indexPath row]];
+    
+        if ([[NSString stringWithFormat:@"%@",[msgDic objectForKey:@"messagestate"]] isEqualToString:@"未完成"]) {
+             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+        
+        [Message changeState:[[(UILabel *)[cell.contentView viewWithTag:messageidTag] text] intValue]];
+        
+        array = [Message findAllMessage:userID];
+               
+        NSLog(@"CELL CHANGE %@ ---------%@ ",[NSArray arrayWithObject:[NSIndexPath indexPathForRow:[indexPath row]inSection:0] ],indexPath);
+        
+      // [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil]withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+            cell.backgroundColor = [UIColor whiteColor];
+        
+        self.navigationController.tabBarItem.badgeValue = [Message messageCount];
+
+        }
+        
+           
         [[segue destinationViewController] setDetailItem:msgDic];
     }
 }
@@ -165,12 +201,8 @@
 }
 
 
--(void) dismissKeyBoard{
-    
-    NSLog(@"ssssssssshhhhhhhhhh");
-    
-    
-}
+
+
 - (void)MessagedialogButtonTouchUpInside: (MessageAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
     NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", buttonIndex, [alertView tag]);

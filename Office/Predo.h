@@ -17,4 +17,6 @@
 
 + (void)upDateStatus:(int)updateID fromStatus:(BOOL)status;
 
++ (NSString *)predoCount;
+
 @end

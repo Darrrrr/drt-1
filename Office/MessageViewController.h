@@ -12,6 +12,7 @@
 
 @property (retain, nonatomic) NSMutableArray *array;
 
+
 @property  (assign,nonatomic) int userID;
 - (IBAction)addMessage:(id)sender;
 
