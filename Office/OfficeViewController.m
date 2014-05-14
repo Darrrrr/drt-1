@@ -17,6 +17,17 @@
 @synthesize username,password,logo;
 - (void)viewDidLoad
 {
+    //文本框缩进
+    UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, username.frame.size.height)];
+    leftView.backgroundColor = username.backgroundColor;
+    username.leftView = leftView;
+    username.leftViewMode = UITextFieldViewModeAlways;
+    
+    UIView *leftView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 8, password.frame.size.height)];
+    leftView1.backgroundColor = username.backgroundColor;
+    password.leftView = leftView1;
+    password.leftViewMode = UITextFieldViewModeAlways;
+    
     
     [UIView beginAnimations:nil context:UIGraphicsGetCurrentContext()];
     [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut]; //InOut 表示进入和出去时都启动动画

@@ -67,7 +67,7 @@
 
     
     [table reloadData];
-   
+    self.navigationController.tabBarItem.badgeValue = [Predo predoCount];
     NSLog(@"fresh");
 
 }

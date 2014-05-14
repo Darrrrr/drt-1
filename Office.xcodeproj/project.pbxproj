@@ -76,7 +76,6 @@
 		24399745191B721F002A17E2 /* ContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24399743191B721F002A17E2 /* ContactViewController.m */; };
 		247F21F419173709000DB2AB /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 247F21F219173709000DB2AB /* pinyin.c */; };
 		B808A925190F3774000554D2 /* predoList.png in Resources */ = {isa = PBXBuildFile; fileRef = B808A924190F3774000554D2 /* predoList.png */; };
-		B816C49719186CBD003895DA /* msgbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B816C49619186CBD003895DA /* msgbg.png */; };
 		B816C49B1918C7A0003895DA /* BDKNotifyHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = B816C49A1918C7A0003895DA /* BDKNotifyHUD.m */; };
 		B816C49E1918C7B9003895DA /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = B816C49C1918C7B9003895DA /* Checkmark.png */; };
 		B816C49F1918C7B9003895DA /* Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B816C49D1918C7B9003895DA /* Checkmark@2x.png */; };
@@ -95,6 +94,7 @@
 		B8644B46190788E400238B15 /* dbsx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B44190788E400238B15 /* dbsx@2x.png */; };
 		B8644B47190788E400238B15 /* dbsx.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B45190788E400238B15 /* dbsx.png */; };
 		B8644B491907A50C00238B15 /* bgico.png in Resources */ = {isa = PBXBuildFile; fileRef = B8644B481907A50C00238B15 /* bgico.png */; };
+		B864892E1922F2F0004DBC37 /* msgbg.png in Resources */ = {isa = PBXBuildFile; fileRef = B864892D1922F2F0004DBC37 /* msgbg.png */; };
 		B8A03BDA190FA7E5004FBB3A /* lxrtx.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A03BD9190FA7E5004FBB3A /* lxrtx.png */; };
 /* End PBXBuildFile section */
 
@@ -227,7 +227,6 @@
 		247F21F219173709000DB2AB /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		247F21F319173709000DB2AB /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		B808A924190F3774000554D2 /* predoList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = predoList.png; sourceTree = "<group>"; };
-		B816C49619186CBD003895DA /* msgbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgbg.png; sourceTree = "<group>"; };
 		B816C4991918C7A0003895DA /* BDKNotifyHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDKNotifyHUD.h; sourceTree = "<group>"; };
 		B816C49A1918C7A0003895DA /* BDKNotifyHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDKNotifyHUD.m; sourceTree = "<group>"; };
 		B816C49C1918C7B9003895DA /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Checkmark.png; sourceTree = "<group>"; };
@@ -248,6 +247,7 @@
 		B8644B44190788E400238B15 /* dbsx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dbsx@2x.png"; sourceTree = "<group>"; };
 		B8644B45190788E400238B15 /* dbsx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dbsx.png; sourceTree = "<group>"; };
 		B8644B481907A50C00238B15 /* bgico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgico.png; sourceTree = "<group>"; };
+		B864892D1922F2F0004DBC37 /* msgbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgbg.png; sourceTree = "<group>"; };
 		B8A03BD9190FA7E5004FBB3A /* lxrtx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lxrtx.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -557,13 +557,13 @@
 				B808A924190F3774000554D2 /* predoList.png */,
 				B816C49C1918C7B9003895DA /* Checkmark.png */,
 				B816C49D1918C7B9003895DA /* Checkmark@2x.png */,
-				B816C49619186CBD003895DA /* msgbg.png */,
 				B829CD681910FCEE00028BA7 /* fgx.png */,
 				B829CD621910DC9D00028BA7 /* ditu.png */,
 				B829CD631910DC9D00028BA7 /* youjian.png */,
 				B829CD641910DC9D00028BA7 /* xinxi.png */,
 				B829CD601910972D00028BA7 /* textbg.png */,
 				B8A03BD9190FA7E5004FBB3A /* lxrtx.png */,
+				B864892D1922F2F0004DBC37 /* msgbg.png */,
 				B8644B481907A50C00238B15 /* bgico.png */,
 				B8644B44190788E400238B15 /* dbsx@2x.png */,
 				B8644B45190788E400238B15 /* dbsx.png */,
@@ -681,7 +681,6 @@
 				B8644B421907871C00238B15 /* bwl.png in Resources */,
 				243996D5191B6D14002A17E2 /* Month Calendar Today Selected Tile.png in Resources */,
 				B829CD661910DC9D00028BA7 /* youjian.png in Resources */,
-				B816C49719186CBD003895DA /* msgbg.png in Resources */,
 				243996CE191B6D14002A17E2 /* calendar_right_arrow.png in Resources */,
 				B829CD671910DC9D00028BA7 /* xinxi.png in Resources */,
 				243996D0191B6D14002A17E2 /* color_gradient_gray.png in Resources */,
@@ -692,6 +691,7 @@
 				242DFA8C1904F4B30067B111 /* Main.storyboard in Resources */,
 				243996D6191B6D14002A17E2 /* Month Calendar Today Tile.png in Resources */,
 				B8644B46190788E400238B15 /* dbsx@2x.png in Resources */,
+				B864892E1922F2F0004DBC37 /* msgbg.png in Resources */,
 				243996D1191B6D14002A17E2 /* color_gradient.png in Resources */,
 				B8644B401907871C00238B15 /* lxr@2x.png in Resources */,
 				243996CF191B6D14002A17E2 /* calendar_right_arrow@2x.png in Resources */,
